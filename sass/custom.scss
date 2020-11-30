@@ -44,7 +44,14 @@ body {
 		font-family: "knowledge-regular";
 	}
 }
-
+// Image caption
+.wp-caption-text {
+	text-align: center;
+	font-size: 13px !important;
+	line-height: 15px;
+	padding: 5px;
+	background: #ebebeb;
+}
 //  Navigation color for BLUE theme
 #nav_bar_blue {
 	.header_logo {
