@@ -13,7 +13,6 @@ defined('ABSPATH') || exit;
 
 $container = get_theme_mod('understrap_container_type');
 ?>
-<!-- <?php get_template_part('sidebar-templates/sidebar', 'footerfull'); ?> -->
 <footer>
     <div class="wrapper" id="cta_footer_blue">
         <!-- <div class="wrapper" id="cta_footer_green"> -->
