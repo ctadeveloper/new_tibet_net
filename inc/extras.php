@@ -34,12 +34,28 @@ if ( ! function_exists( 'understrap_body_classes' ) ) {
 	}
 }
 
-if ( function_exists( 'understrap_adjust_body_class' ) ) {
-	/*
-	 * understrap_adjust_body_class() deprecated in v0.9.4. We keep adding the
-	 * filter for child themes which use their own understrap_adjust_body_class.
+// Removes tag class from the body_class array to avoid Bootstrap markup styling issues.
+add_filter( 'body_class', 'understrap_adjust_body_class' );
+
+if ( ! function_exists( 'understrap_adjust_body_class' ) ) {
+	/**
+	 * Setup body classes.
+	 *
+	 * @param string $classes CSS classes.
+	 *
+	 * @return mixed
 	 */
-	add_filter( 'body_class', 'understrap_adjust_body_class' );
+	function understrap_adjust_body_class( $classes ) {
+
+		foreach ( $classes as $key => $value ) {
+			if ( 'tag' === $value ) {
+				unset( $classes[ $key ] );
+			}
+		}
+
+		return $classes;
+
+	}
 }
 
 // Filter custom logo with correct classes.
@@ -145,13 +161,13 @@ if ( ! function_exists( 'understrap_escape_the_archive_description' ) ) {
 	function understrap_escape_the_archive_description( $description ) {
 		if ( is_author() || is_post_type_archive() ) {
 			return wp_kses_post( $description );
+		} else {
+			/*
+			* All other descriptions are retrieved via term_description() which returns
+			* a sanitized description.
+			*/
+			return $description;
 		}
-
-		/*
-		 * All other descriptions are retrieved via term_description() which returns
-		 * a sanitized description.
-		 */
-		return $description;
 	}
 } // End of if function_exists( 'understrap_escape_the_archive_description' ).
 

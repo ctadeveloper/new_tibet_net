@@ -171,7 +171,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 			$output .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 
 			// initialize array for holding the $atts for the link item.
-			$atts = array();
+            $atts = array();
 
 			// Set title from item to the $atts array - if title is empty then
 			// default to item title.
@@ -194,8 +194,9 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 				$atts['data-toggle']   = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
-				$atts['class']         = 'dropdown-toggle nav-link';
-				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
+				$atts['class']         = 'dropdown-toggle nav-link sub-menu';
+                $atts['id']            = 'menu-item-dropdown-' . $item->ID;
+                // echo "Has child";
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
 				// Items in dropdowns use .dropdown-item instead of .nav-link.
@@ -424,7 +425,9 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 					// Font Awesome.
 					$icon_classes[] = $class;
 					unset( $classes[ $key ] );
+				// } elseif ( preg_match( '/^glyphicon-(\S*)?|^glyphicon(\s?)$/i', $class ) ) {
 				} elseif ( preg_match( '/^glyphicon-(\S*)?|^glyphicon(\s?)$/i', $class ) ) {
+
 					// Glyphicons.
 					$icon_classes[] = $class;
 					unset( $classes[ $key ] );
