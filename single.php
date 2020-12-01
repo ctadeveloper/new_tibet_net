@@ -14,31 +14,34 @@ $container = get_theme_mod( 'understrap_container_type' );
 <section class="bg-light py-2">
 	<div class="container">
 		<div class="row">
-			<ul class="nav">
-				<?php
-					while ( have_posts() ) {
-						the_post();
-						// catetory id
-						$categories = get_the_category();
-						foreach ($categories as $category) {?>
-							<li class="nav-item text-muted px-1">
-								<a class="text-muted" href="/category/<?php echo $category->category_nicename;?>">
-									<?php echo $category->name?> |
-								</a>
-							</li>
-						<?php
+			<div class="col-12">
+				<ul class="nav">
+					<?php
+						while ( have_posts() ) {
+							the_post();
+							// catetory id
+							$categories = get_the_category();
+							foreach ($categories as $category) {?>
+								<li class="nav-item text-muted px-1">
+									<a class="text-muted" href="/category/<?php echo $category->category_nicename;?>">
+										<?php echo $category->name?> |
+									</a>
+								</li>
+							<?php
+							}
 						}
-					}
-				?>
-			</ul>
+					?>
+				</ul>
+			</div>
 		</div>
 	</div>
 </section>
-<div class="wrapper" id="single-wrapper">
+<div class="my-3" id="single-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 			<!-- Do the left sidebar check -->
+
 			<main class="col-md-9 col-12 site-main" id="main">
 				<?php
 				while ( have_posts() ) {
@@ -53,8 +56,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 				?>
 
 			</main><!-- #main -->
-			<aside class="col-md-3">
-			<?php get_template_part('global-templates/right-sidebar-check');?>
+			<aside class="col-md-3" id="rightSidebar">
+				<?php get_template_part('global-templates/right-sidebar-check');?>
 			</aside>
 			<!-- Do the right sidebar check -->
 		</div><!-- .row -->

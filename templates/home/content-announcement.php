@@ -58,9 +58,11 @@
                         </div>
                     </div>
                     <div class="p-1">
-                        <a href="<?php echo get_permalink(); ?>">
-                            <h6 class="text-dark"><?php echo excerpt_title_length(80) ?></h6>
-                        </a>
+                        <h6 class="text-dark">
+                            <a href="<?php echo get_permalink(); ?>">
+                                <?php echo excerpt_title_length(80) ?>
+                            </a>
+                        </h6>
                         <h6 class="small text-muted"><?php echo get_the_time("F j, Y"); ?>
                             <?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>
                         </h6>

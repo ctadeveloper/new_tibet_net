@@ -15,20 +15,20 @@ if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
-	<h5 class="text-dark font-weight-bolder py-2 border-bottom">FEATURED NEWS</h5>
+	<h5 class="text-dark font-weight-bolder py-2 border-bottom" style="border-bottom:dotted .5px gray">FEATURED NEWS</h5>
 	<?php
 		$flash_news_loop = new WP_Query(array(
 			'category_name' => 'featured-flash-news',
-			'posts_per_page' => 3,
+			'posts_per_page' => 4,
 			'orderby' => 'date', 'order' => 'DESC',
 			'paged' => $paged
 		));
 		while ($flash_news_loop->have_posts()) : $flash_news_loop->the_post();
 		?>
 			<div class="my-3">
-			<!-- <a href="<?php echo get_permalink(); ?>"> -->
-					<h6><?php echo the_title() ?></h6>
-				<!-- </a> -->
+				<a class="text-dark" href="<?php echo get_permalink(); ?>">
+					<h6><?php echo excerpt_title_length(80) ?></h6>
+				</a>
 				<h6 class="small text-muted mr-2"><?php echo get_the_time("F j, Y"); ?> <i class="fas fa-share-alt"></i></h6>
 			</div>
 		<?php endwhile;
@@ -58,13 +58,14 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						// $cta_has_thumb = ' cta_no_thumb';
 					}
 				?>
+				<!-- TOP Stories -->
 				<div class="col-md-12 col-sm-6 py-2">
 					<a href="<?php echo get_permalink()?>">
 						<?php echo $img_html ?>
 					</a>
 					<div class="p-1">
-						<a href="<?php echo get_permalink(); ?>" >
-							<h6 class="text-dark"><?php echo excerpt_title_length(80) ?></h6>
+						<a class="text-dark"href="<?php echo get_permalink(); ?>" >
+							<h6><?php echo excerpt_title_length(80) ?></h6>
 						</a>
 						<h6 class="small text-muted"><?php echo get_the_time("F j, Y"); ?>
 							<?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>

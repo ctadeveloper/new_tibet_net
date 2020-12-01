@@ -6,7 +6,13 @@
 */
 // $hover:#ff8000; // hover color of the website;
 $hover: #ff8000; // hover color of the website;
-
+a {
+	color: #343a40 !important;
+}
+a:hover {
+	color: $hover !important;
+	transition: 0.5s;
+}
 @import "theme/theme_variables";
 @font-face {
 	font-family: "knowledge-light";
@@ -44,6 +50,7 @@ body {
 		font-family: "knowledge-regular";
 	}
 }
+
 // Image caption
 .wp-caption-text {
 	text-align: center;
@@ -176,7 +183,7 @@ body {
 				position: absolute;
 				bottom: 10px;
 				a {
-					color: #fff;
+					color: #fff !important;
 					text-decoration: none;
 				}
 			}
@@ -340,6 +347,16 @@ body {
 	background-position: center center;
 	height: 340px;
 }
+/**
+ * Right Sidebar
+ */
+#rightSidebar {
+	a:hover {
+		color: $hover !important;
+		transition: 0.5s;
+	}
+}
+
 /**
  * CTA FOOTER
  * BLUE 
