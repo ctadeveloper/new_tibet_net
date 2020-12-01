@@ -83,7 +83,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function understrap_post_nav() {
+	function understrap_post_nav($cat_id) {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		$next     = get_adjacent_post( false, '', false );
@@ -92,19 +92,43 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 			return;
 		}
 		?>
-		<nav class="container navigation post-navigation">
-			<h2 class="sr-only"><?php esc_html_e( 'Post navigation', 'understrap' ); ?></h2>
-			<div class="row nav-links justify-content-between">
-				<?php
-				if ( get_previous_post_link() ) {
-					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'understrap' ) );
-				}
-				if ( get_next_post_link() ) {
-					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
-				}
-				?>
-			</div><!-- .nav-links -->
-		</nav><!-- .navigation -->
+
+		<!-- Related Post -->
+		<nav class="container py-4">
+			<div class="row">
+			<?php
+			$related_post = new WP_Query(array(
+				'cat' => $cat_id,
+				'posts_per_page' => 4,
+				'orderby' => 'date',
+				'order' => 'DESC'
+			));
+			while($related_post->have_posts()) : $related_post->the_post();
+                $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                // ImgMagick
+                // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
+                $cta_has_thumb = '';
+                $post_index_img = cta_thumb(280, 140);
+                if ($post_index_img != '') {
+                    $img_html = '<img class="list-item-image img-responsive w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                } else { // if (!is_page_template( 'page-homepage.php' )) {
+                    $img_html = '<img class="list-item-image img-responsive w-100" height="160" width="280 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                    // $cta_has_thumb = ' cta_no_thumb';
+                }
+			?>
+				<div class="col-3">
+					<a href="<?php echo get_permalink()?>">
+						<?php echo $img_html ?>
+					</a>
+				</div>
+		<?php endwhile;
+		wp_reset_postdata();
+		?>
+			</div>
+		</nav>
+
+
+		
 		<?php
 	}
 }

@@ -13,7 +13,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div class="wrapper" id="single-wrapper">
-
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
@@ -26,13 +25,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php
 				while ( have_posts() ) {
 					the_post();
+					// catetory id
+					$categories = get_the_category();
+					// var_dump($categories);
+					$cat_id = $categories[0]->term_id;
 					get_template_part( 'loop-templates/content', 'single' );
-					understrap_post_nav();
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+					understrap_post_nav($cat_id);
 				}
 				?>
 
@@ -43,8 +41,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div><!-- .row -->
 
 	</div><!-- #content -->
-
 </div><!-- #single-wrapper -->
-
 <?php
 get_footer();
