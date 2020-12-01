@@ -95,6 +95,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 
 		<!-- Related Post -->
 		<nav class="container py-4">
+			<h5 class="font-weight-bolder text-dark py-2" style="border-bottom:dotted #d2d5d8 .1px">Related Articles</h5>
 			<div class="row">
 			<?php
 			$related_post = new WP_Query(array(
@@ -110,16 +111,24 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
                 $cta_has_thumb = '';
                 $post_index_img = cta_thumb(280, 140);
                 if ($post_index_img != '') {
-                    $img_html = '<img class="list-item-image img-responsive w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                    $img_html = '<img class="rounded img-responsive w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="list-item-image img-responsive w-100" height="160" width="280 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                    $img_html = '<img class="rounded img-responsive w-100" height="160" width="280 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
                     // $cta_has_thumb = ' cta_no_thumb';
                 }
 			?>
-				<div class="col-3">
+				<div class="col-md-3 col-sm-4 col-xs-6">
 					<a href="<?php echo get_permalink()?>">
 						<?php echo $img_html ?>
 					</a>
+                    <div class="p-1">
+                        <a href="<?php echo get_permalink(); ?>" >
+                            <h6 class="text-dark"><?php echo excerpt_title_length(80) ?></h6>
+                        </a>
+                        <h6 class="small text-muted"><?php echo get_the_time("F j, Y"); ?>
+                            <?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>
+                        </h6>
+                    </div>
 				</div>
 		<?php endwhile;
 		wp_reset_postdata();

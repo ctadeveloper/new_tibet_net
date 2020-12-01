@@ -29,9 +29,9 @@
                 $cta_has_thumb = '';
                 $post_index_img = cta_thumb(280, 140);
                 if ($post_index_img != '') {
-                    $img_html = '<img class="list-item-image img-responsive w-100 rounded-top" src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                    $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="list-item-image img-responsive w-100 rounded-top" height="140" width="280"  src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                    $img_html = '<img class="img-responsive w-100 rounded-top"  src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
                     // $cta_has_thumb = ' cta_no_thumb';
                 }
                 $tax_args = array('orderby' => 'none');
