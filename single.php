@@ -16,17 +16,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 			<ul class="nav">
 				<?php
-				while ( have_posts() ) {
-					the_post();
-					// catetory id
-					$categories = get_the_category();
-					foreach ($categories as $category) {?>
-						<li class="nav-item text-muted px-1">
-							<?php echo $category->name?> |
-						</li>
-					<?php
+					while ( have_posts() ) {
+						the_post();
+						// catetory id
+						$categories = get_the_category();
+						foreach ($categories as $category) {?>
+							<li class="nav-item text-muted px-1">
+								<a class="text-muted" href="/category/<?php echo $category->category_nicename;?>">
+									<?php echo $category->name?> |
+								</a>
+							</li>
+						<?php
+						}
 					}
-				}
 				?>
 			</ul>
 		</div>
