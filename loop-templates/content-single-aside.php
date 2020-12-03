@@ -23,9 +23,9 @@ Aside / Periodical
 	<div class="entry-content">
 
 	<?php
-$field = get_field('periodical_pdf');
-var_dump($field);
-?>
+	$field = get_field('periodical_pdf');
+	var_dump($field);
+	?>
 		<?php the_content(); ?>
 
 		<?php
