@@ -100,7 +100,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 			<?php
 			$related_post = new WP_Query(array(
 				'cat' => $cat_id,
-				'posts_per_page' => 4,
+				'posts_per_page' => 3,
 				'orderby' => 'date',
 				'order' => 'DESC'
 			));
@@ -117,14 +117,16 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
                     // $cta_has_thumb = ' cta_no_thumb';
                 }
 			?>
-				<div class="col-md-3 col-sm-4 col-xs-6">
+				<div class="col-md-4 col-sm-4 col-xs-6">
 					<a href="<?php echo get_permalink()?>">
 						<?php echo $img_html ?>
 					</a>
                     <div class="p-1">
-                        <a href="<?php echo get_permalink(); ?>" >
-                            <h6 class="text-dark"><?php echo excerpt_title_length(80) ?></h6>
-                        </a>
+						<h6 class="text-dark">
+							<a href="<?php echo get_permalink(); ?>" >
+							<?php echo excerpt_title_length(80) ?>
+							</a>
+						</h6>
                         <h6 class="small text-muted"><?php echo get_the_time("F j, Y"); ?>
                             <?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>
                         </h6>

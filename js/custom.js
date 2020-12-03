@@ -33,7 +33,8 @@ $('ul.navbar-nav li.menu-item-has-children').hover(function () {
 }, function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
-
+// lazyloading images
+$("img").addClass("lazyload blur-up")
 // RoyalSlider
 jQuery(document).ready(function ($) {
     jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';

@@ -15,7 +15,7 @@ if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
-	<h5 class="text-dark font-weight-bolder py-2 border-bottom" style="border-bottom:dotted .5px gray">FEATURED NEWS</h5>
+	<h5 class="text-dark font-weight-bolder py-2 border-top border-dark">FEATURED NEWS</h5>
 	<?php
 		$flash_news_loop = new WP_Query(array(
 			'category_name' => 'featured-flash-news',
@@ -25,7 +25,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		));
 		while ($flash_news_loop->have_posts()) : $flash_news_loop->the_post();
 		?>
-			<div class="my-3">
+			<div class="my-2 p-1 bg-light">
 				<a class="text-dark" href="<?php echo get_permalink(); ?>">
 					<h6><?php echo excerpt_title_length(80) ?></h6>
 				</a>
@@ -35,8 +35,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		wp_reset_postdata();
 		?>
 
-		<div>
-			<h5 class="text-dark font-weight-bolder py-2 border-bottom">TOP STORIES</h5>
+		<div class="my-2">
+			<h5 class="text-dark font-weight-bolder py-2 border-top border-dark">TOP STORIES</h5>
 			<div class="row">
 				<?php
 				$related_post = new WP_Query(array(
@@ -59,7 +59,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					}
 				?>
 				<!-- TOP Stories -->
-				<div class="col-md-12 col-sm-6 py-2">
+				<div class="col-md-12 col-sm-6 py-1">
 					<a href="<?php echo get_permalink()?>">
 						<?php echo $img_html ?>
 					</a>
