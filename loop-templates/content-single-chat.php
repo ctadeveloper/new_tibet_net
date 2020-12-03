@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-Chat
+Chat / Publication
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 
@@ -21,6 +21,10 @@ Chat
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php
+	$field = get_field('publication_pdf');
+	var_dump($field);
+	?>
 		<?php the_content(); ?>
 
 		<?php

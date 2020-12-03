@@ -56,7 +56,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					if(false === $format){
 						$format = 'single';
 					}
-						get_template_part( 'loop-templates/content-single', get_post_format() );
+					get_template_part( 'loop-templates/content-single', get_post_format() );
 
 					// include (TEMPLATEPATH.'/loop-templates/content-'.$format.'.php');
 					// if($format === 'gallery'){
