@@ -81,6 +81,7 @@ function cta_thumb($width, $height)
         }
     }
 }
+
 // Catch that image
 function catch_that_image()
 {

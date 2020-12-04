@@ -22,7 +22,7 @@ $container = get_theme_mod('understrap_container_type');
                 <img src="<?php echo get_template_directory_uri() . '/img/cta-divider.png' ?>" class="img-fluid pt-3" alt="">
 
                 <div class="row py-2">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <h5 class="footer_header">About Tibet</h5>
                         <ul class="footer_list">
                             <li class="text-white-50"><a href="/about-tibet/tibet-at-a-glance/" target="_self">Tibet at a Glance</a></li>
@@ -37,7 +37,7 @@ $container = get_theme_mod('understrap_container_type');
                             <li><a href="/dolgyal-shugden/" target="_blank" rel="noopener">Dolgyal-Shugden</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <h5 class="footer_header">About CTA</h5>
                         <ul class="footer_list">
                             <li><a href="http://new.tibet.net:8888//about-cta/constitution/" target="_self">Constitution</a></li>
@@ -50,7 +50,7 @@ $container = get_theme_mod('understrap_container_type');
                             <li><a href="http://new.tibet.net:8888/about-cta/office-of-the-auditor-general/" target="_self">Auditor General</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <h5 class="footer_header">Departments</h5>
                         <ul class="footer_list">
                             <li><a href="http://new.tibet.net:8888/religion/" target="_self">Religion &amp; Culture</a></li>
@@ -75,7 +75,7 @@ $container = get_theme_mod('understrap_container_type');
                             <li><a href="http://new.tibet.net:8888/archive/" target="_self">Tibet.net Archive</a></li>
                         </ul>
                     </div> -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <h5>Sign Up</h5>
                         <p class="small">Email us: </p>
                         <input type="text" class="form-control">

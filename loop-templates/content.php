@@ -74,7 +74,7 @@ defined( 'ABSPATH' ) || exit;
 	</header><!-- .entry-header -->
 
 
-	<div class="entry-content m-0 text-secondary">
+	<div class="entry-content m-0 text-muted">
 		<a href="<?php echo get_permalink(); ?>">
 			<?php echo get_print_excerpt(150).'..'; ?>
 		</a>

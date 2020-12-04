@@ -26,7 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 		</div>
 	</div>
-	<div class="border-bottom"></div>
+	<div class="border-bottom border-light"></div>
 	<div class="container pt-2">
 		<div class="row">
 			<div class="col-12 text-white-50 font-weight-bold small">
