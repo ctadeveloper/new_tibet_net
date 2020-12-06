@@ -15,8 +15,6 @@
             while ($human_right->have_posts()) : $human_right->the_post();
                 // Thumbnail Url
                 $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                // echo $thumb_url;
-                $default = get_template_directory_uri() . '/img/cta_grid_default.jpg';
                 // echo $default;
                 // ImgMagick
                 // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
