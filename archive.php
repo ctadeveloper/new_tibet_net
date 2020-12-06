@@ -51,9 +51,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 						if ( have_posts() ) {
 							?>
 							<?php
+							$query = new WP_Query(array(
+								'posts_per_page' => 1,
+
+							));
 							// Start the loop.
 							while ( have_posts() ) {
 								the_post();
+								// var_dump(get_post());
+								// die();
 								/*
 								* Include the Post-Format-specific template for the content.
 								* If you want to override this in a child theme, then include a file

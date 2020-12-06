@@ -74,7 +74,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				?>
 
 			</main><!-- #main -->
-			<aside class="col-md-3" id="rightSidebar">
+			<aside class="col-md-3 col-12" id="rightSidebar">
 				<?php get_template_part('global-templates/right-sidebar-check');?>
 			</aside>
 			<!-- Do the right sidebar check -->

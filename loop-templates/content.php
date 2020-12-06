@@ -50,13 +50,15 @@ defined( 'ABSPATH' ) || exit;
 		$cta_has_thumb = '';
 		$post_index_img = cta_thumb(280, 140);
 		if ($post_index_img != '') {
-			$img_html = '<img class="list-item-image img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+			$img_html = '<img class="w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
 		} else { // if (!is_page_template( 'page-homepage.php' )) {
-			$img_html = '<img class="list-item-image img-responsive w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
+			$img_html = '<img class="w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
 			// $cta_has_thumb = ' cta_no_thumb';
 		}
 	?>
+	<a href="<?php echo get_permalink(); ?>">
 	<?php echo $img_html; ?>
+	</a>
 	<header class="entry-header">
 		<h5 class="entry-title text-dark pt-2">
 			<a href="<?php echo get_permalink(); ?>">
