@@ -42,6 +42,8 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 		</div>
 	</div> -->
+
+	
 	<?php
 		// Thumbnail Url
 		$thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
