@@ -13,6 +13,12 @@ $(window).on("scroll", function () {
         $("#main-nav").removeClass("sticky_header");
     }
 });
+// Removing blur for gallery
+if($('#gallery')){
+    if($("rsNavItem")){
+        $("img").removeClass('blur-up');
+    }
+}
 // data-toggle="modal" data-target="#exampleModal"
 // $("#myModal").modal('show');
 
@@ -37,7 +43,8 @@ $('ul.navbar-nav li.menu-item-has-children').hover(function () {
 $("img").addClass("lazyload blur-up")
 // RoyalSlider
 jQuery(document).ready(function ($) {
-    jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
+    // jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
+// Featured Slider News
     $('#slider-with-blocks-1').royalSlider({
         autoPlay: {
             // autoplay options go gere
@@ -63,13 +70,12 @@ jQuery(document).ready(function ($) {
             delay: 400
         }
     });
-    // Video Tibet tv
+// Tibet TV Video JS
   $('#video-gallery').royalSlider({
     arrowsNav: false,
     fadeinLoadedSlide: true,
     controlNavigationSpacing: 0,
     controlNavigation: 'thumbnails',
-
     thumbs: {
       autoCenter: false,
       fitInViewport: true,
@@ -92,15 +98,40 @@ jQuery(document).ready(function ($) {
     autoScaleSlider: true, 
     autoScaleSliderWidth: 960,     
     autoScaleSliderHeight: 450,
-
-    /* size of all images http://help.dimsemenov.com/kb/royalslider-jquery-plugin-faq/adding-width-and-height-properties-to-images */
     imgWidth: 640,
     imgHeight: 360
 
   });
+//   Photo Gallery Royalslider
+ $('#gallery').royalSlider({
+    fullscreen: {
+      enabled: true,
+      nativeFS: true
+    },
+    controlNavigation: 'thumbnails',
+    autoScaleSlider: true, 
+    autoScaleSliderWidth: 960,     
+    autoScaleSliderHeight: 600,
+    loop: false,
+    imageScaleMode: 'fit-if-smaller',
+    navigateByClick: true,
+    numImagesToPreload:2,
+    arrowsNav:true,
+    arrowsNavAutoHide: true,
+    arrowsNavHideOnTouch: true,
+    keyboardNavEnabled: true,
+    fadeinLoadedSlide: true,
+    globalCaption: false,
+    globalCaptionInside: false,
+    thumbs: {
+      appendSpan: true,
+      firstMargin: true,
+      paddingBottom: 4
+    }
+  });
 //  Slick Js
 //  Home Immportant Topic
-    $('.importantTopciSlider').slick({
+ $('.importantTopciSlider').slick({
     dots: true,
     infinite: false,
     speed: 300,

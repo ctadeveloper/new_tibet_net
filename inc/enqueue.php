@@ -33,6 +33,9 @@ function royalslider_scripts()
         // Skin
         $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/royalslider/rs-minimal-white.css');
         wp_enqueue_style('Royalslider-theme', get_template_directory_uri() . '/js/royalslider/rs-minimal-white.css', array(), $css_version);
+        // Royalslider Gallery skin
+                $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/royalslider/rs-default.css');
+        wp_enqueue_style('Royalslider-Default-theme', get_template_directory_uri() . '/js/royalslider/rs-default.css', array(), $css_version);
         // Javascript
         $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/royalslider/jquery.royalslider.min.js');
         wp_enqueue_script('royalslider_scripts', get_template_directory_uri() . '/js/royalslider/jquery.royalslider.min.js', array(), $js_version, true);
