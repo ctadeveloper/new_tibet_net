@@ -22,7 +22,6 @@ defined( 'ABSPATH' ) || exit;
      <?php if(get_field('pfgallery_images_repeater')): ?>
           <?php 
 		  $pfgallery_items = '';
-		  $caption = '';
           $pfgallery_imgNum = 1;
           while(the_repeater_field('pfgallery_images_repeater')): ?>
           <?php
@@ -33,23 +32,16 @@ defined( 'ABSPATH' ) || exit;
           $pfgallery_custom_img_height = get_field('pfgallery_image_custom_height');
 
           if ($pfgallery_photog_credit != '') {
-
               $pfgallery_item_cap = $pfgallery_item_cap . ' Photo/' . $pfgallery_photog_credit;
-
           }
           $full_img = $pfgallery_item_img;
           $parsedurl = parse_url($full_img);  
           $thumb_file   = $_SERVER['DOCUMENT_ROOT'] . $parsedurl['path'];
           if (file_exists($thumb_file)){
-              $thumb_img = thumbResizeIM($full_img, 90, 120, $pfgallery_imgNum); 
+              $thumb_img = thumbResizeIM($full_img, 50, 50, $pfgallery_imgNum); 
               $medium_img = thumbResizeIM($full_img, 800, 600, $pfgallery_imgNum); 
-			  $pfgallery_items .= '<a class="rsImg"  data-rsBigImg="' . $full_img . '" href="' . $full_img . '">' . $pfgallery_item_cap . '<img  class="rsTmb mx-1" src="' . $thumb_img . '" />
-			  '.$pfgallery_item_cap.'
-			  </a>'; 
-			//  $pfgallery_items .= '<a class="rsImg my-2" data-rsbigimg="' . $full_img . '" href="' . $full_img . '">Vincent van Gogh - Still Life: Vase with Twelve Sunflowers<img width="96" height="72" class="rsTmb" src="' . $thumb_img . '"></a>';
+			  $pfgallery_items .= '<a class="rsImg"  data-rsBigImg="' . $full_img . '" href="' . $full_img . '">' . $pfgallery_item_cap . '<img  class="rsTmb mx-1 rounded" src="' . $thumb_img . '" /></a>'; 
 			  $pfgallery_imgNum = $pfgallery_imgNum +1;
-			//   $caption .= $pfgallery_item_cap;
-
            } ?>
 
 		  <?php endwhile; ?>

@@ -181,8 +181,8 @@ $(document).ready(function () {
 })
 
 // Removing blur for gallery
-// if($('#gallery')){
-//     if($("rsNavItem")){
-//         $("img").removeClass('blur-up lazyloading');
-//     }
-// }
+if($('#gallery')){
+    if($("rsNavItem")){
+        $("img").removeClass('blur-up lazyloading');
+    }
+}
