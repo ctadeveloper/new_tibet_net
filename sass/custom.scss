@@ -420,6 +420,16 @@ body {
 
 // Photo Gallery
 #gallery {
+	.rsGCaption {
+		width: 100%;
+		float: left;
+		background-color: #c6c9cd !important;
+		text-align: center;
+		color: #000;
+		font-size: 14px;
+		left: 0px !important;
+	}
+
 	.rsImg {
 		margin-top: 20px !important;
 	}

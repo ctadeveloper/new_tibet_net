@@ -116,14 +116,16 @@ jQuery(document).ready(function ($) {
     arrowsNavHideOnTouch: true,
     keyboardNavEnabled: true,
     fadeinLoadedSlide: true,
-    globalCaption: false,
-    globalCaptionInside: false,
+    globalCaption: true,
+    globalCaptionInside: true,
     thumbs: {
       appendSpan: true,
       firstMargin: true,
       paddingBottom: 4
     }
+    
   });
+
 //  Slick Js
 //  Home Immportant Topic
  $('.importantTopciSlider').slick({
@@ -171,7 +173,12 @@ jQuery(document).ready(function ($) {
 
 });
 
+$(document).ready(function () {
+    $("#book").flipBook({
+        pdfUrl:"../book2.pdf",
+    });
 
+})
 
 // Removing blur for gallery
 // if($('#gallery')){
