@@ -25,7 +25,6 @@ Chat / Publication
 	$field = get_field('publication_pdf');
 	// var_dump($field);
 	?>
-	
 		<!-- <?php the_content(); ?> -->
 		<div id="books">
 

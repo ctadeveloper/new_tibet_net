@@ -57,8 +57,5 @@ defined( 'ABSPATH' ) || exit;
 			)
 		);
 		?>
-
 	</div><!-- .entry-content -->
-
-
 </article><!-- #post-## -->
