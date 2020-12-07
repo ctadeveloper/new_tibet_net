@@ -26,7 +26,7 @@ function royalslider_scripts()
         wp_enqueue_script('JQuery', get_template_directory_uri() . '/js/jquery.min.js', array(), $js_version, true);
 
     // RoyalSlider
-    if (is_front_page() || (has_post_format(array('gallery'))) && is_single()) {
+    if (is_front_page() || (has_post_format(array('gallery','chat','aside'))) && is_single()) {
         // Css
         $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/royalslider/royalslider.css');
         wp_enqueue_style('royalslider-style', get_template_directory_uri() . '/js/royalslider/royalslider.css', array(), $css_version);
@@ -98,6 +98,34 @@ function socialShare_scripts(){
     wp_enqueue_style('social_share_css', get_template_directory_uri() . '/js/noapishare/noapishare-style.css', array(), $css_version);
 }
 add_action('wp_enqueue_scripts', 'socialShare_scripts');
+/**
+ * 3D Flipbook
+ * Periodical / Publications books
+ */
+function flipbook_script(){
+    $the_theme     = wp_get_theme();
+    $theme_version = $the_theme->get('Version');
+    if (has_post_format(array('aside','chat'))) {
+    // js
+    $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/flipbook/flipbook.min.js');
+    wp_enqueue_script('flipbook-js', get_template_directory_uri() . '/js/flipbook/flipbook.min.js', array(), $js_version, true);
+    // Slick css
+    $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/flipbook/flipbook.style.css');
+    wp_enqueue_style('flipbook-css', get_template_directory_uri() . '/js/flipbook/flipbook.style.css', array(), $css_version);
+    // PDF.js
+    $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/flipbook/pdf.js');
+    wp_enqueue_script('pdf-js', get_template_directory_uri() . '/js/flipbook/pdf.js', array(), $js_version, true);
+    // pdf service
+    $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/flipbook/flipbook.pdfservice.min.js');
+    wp_enqueue_script('pdf-service', get_template_directory_uri() . '/js/flipbook/flipbook.pdfservice.min.js', array(), $js_version, true);
+    // PDf worker
+    $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/flipbook/pdf.worker.min.js');
+    wp_enqueue_script('pdf-worker', get_template_directory_uri() . '/js/flipbook/pdf.worker.min.js', array(), $js_version, true);
+
+
+    }
+}
+add_action('wp_enqueue_scripts', 'flipbook_script');
 
 /**
  * Javascript  /

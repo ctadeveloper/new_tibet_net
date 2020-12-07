@@ -40,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
           $parsedurl = parse_url($full_img);  
           $thumb_file   = $_SERVER['DOCUMENT_ROOT'] . $parsedurl['path'];
           if (file_exists($thumb_file)){
-              $thumb_img = thumbResizeIM($full_img, 90, 120, $pfgallery_imgNum); 
+              $thumb_img = thumbResizeIM($full_img, 60, 80, $pfgallery_imgNum); 
               $medium_img = thumbResizeIM($full_img, 800, 600, $pfgallery_imgNum); 
               $pfgallery_items .= '<a class="rsImg"  data-rsBigImg="' . $full_img . '" href="' . $full_img . '">' . $pfgallery_item_cap . '<img  class="rsTmb mx-1" src="' . $thumb_img . '" /></a>'; 
               $pfgallery_imgNum = $pfgallery_imgNum +1;

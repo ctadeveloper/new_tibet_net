@@ -13,12 +13,7 @@ $(window).on("scroll", function () {
         $("#main-nav").removeClass("sticky_header");
     }
 });
-// Removing blur for gallery
-if($('#gallery')){
-    if($("rsNavItem")){
-        $("img").removeClass('blur-up');
-    }
-}
+
 // data-toggle="modal" data-target="#exampleModal"
 // $("#myModal").modal('show');
 
@@ -169,6 +164,18 @@ jQuery(document).ready(function ($) {
         // instead of a settings object
     ]
     });
+// Publiction / Periodicals
+    // $("#book").flipBook({
+    //     pdfUrl:"pdf/book2.pdf",
+    // });
+
 });
 
 
+
+// Removing blur for gallery
+// if($('#gallery')){
+//     if($("rsNavItem")){
+//         $("img").removeClass('blur-up lazyloading');
+//     }
+// }

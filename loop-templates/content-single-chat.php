@@ -8,6 +8,18 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
+<?php 
+  echo"<script language='javascript'>
+
+$(document).ready(function () {
+    $('#book').flipBook({
+        pdfUrl:'../book2.pdf',
+    });
+
+})
+</script>
+";
+?>
 Chat / Publication
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
@@ -23,10 +35,15 @@ Chat / Publication
 	<div class="entry-content">
 		<?php
 	$field = get_field('publication_pdf');
-	var_dump($field);
+	// var_dump($field);
 	?>
-		<?php the_content(); ?>
-
+	
+		<!-- <?php the_content(); ?> -->
+		<div id="books">
+			<p>Real 3D Flipbook has lightbox feature - book can be displayed in the same page with lightbox effect.</p>
+			<p>Click on a book cover to start reading.</p>
+			<img src="../page1.jpg" />
+		</div>
 		<?php
 		wp_link_pages(
 			array(
