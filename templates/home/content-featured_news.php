@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- Featured SideNews -->
-        <div id="hFeaturedNews__sideNews" class="col-md-4 col-sm-12">
+        <div id="hFeaturedNews__sideNews" class="col-md-4 col-sm-12 my-2">
             <!-- <h6 class="border-bottom font-weight-bolder pb-1">News Other Featured</h6> -->
             <?php
             $flash_news_loop = new WP_Query(array(
@@ -60,7 +60,7 @@
                 }
             ?>
                 <div class="row">
-                        <div class="col-md-2 px-0 col-3">
+                        <div class="col-md-2 pr-0 col-3">
                             <a href="<?php echo get_permalink(); ?>">
                                 <?php echo $img_html; ?>
                             </a>
@@ -72,25 +72,7 @@
                             <p class="small text-muted p-0 m-0"><?php echo get_the_time("F j, Y"); ?>
                                 <?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>
                             </p>
-                            <!-- <p class="text-muted m-0 p-0 d-none d-md-block"><?php echo get_print_excerpt(100).'...' ?></p> -->
                         </div>
-                    <!-- <div class="col-3">
-                    
-                            <a href="<?php echo get_permalink(); ?>">
-                                <img data-src="<?php echo $thumb1; ?>" alt="<?php echo esc_html(get_the_title()); ?>" class="w-100 rounded mr-3 lazyload blur-up">
-                            </a>
-                    </div> -->
-
-                    <!-- <div class="col-9">
-                                <a href="<?php echo get_permalink(); ?>">
-                                    <h6 class="mt-0 font-weight-bolder"><?php echo excerpt_title_length(50) ?></h6>
-                                </a>
-                                <p class="small text-muted p-0"><?php echo get_the_time("F j, Y"); ?>
-                                    <?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             <?php endwhile;
             wp_reset_postdata();
