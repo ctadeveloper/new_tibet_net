@@ -22,12 +22,21 @@ Chat / Publication
 
 	<div class="entry-content">
 		<?php
-	$field = get_field('publication_pdf');
-	var_dump($field);
-	?>
+		$pdf_url = get_field('publication_pdf');
+			echo "<script>
+			let url = '$pdf_url';
+			console.log(url);
+				document.addEventListener('adobe_dc_view_sdk.ready', function(){ 
+					var adobeDCView = new AdobeDC.View({clientId: '239e472f90aa4e75b88af92eef8deaf8', divId: 'adobe-dc-view'});
+					adobeDCView.previewFile({
+						content:{location: {url: url}},
+						metaData:{fileName: 'Bodea Brochure.pdf'}
+					}, {});
+				});
+			</script>"
+		?>
 		<?php the_content(); ?>
-		<div id="adobe-dc-view"></div>
-
+		<div id="adobe-dc-view" style="height:940px"></div>
 		<?php
 		wp_link_pages(
 			array(

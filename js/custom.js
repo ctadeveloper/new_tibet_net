@@ -169,13 +169,6 @@ jQuery(document).ready(function ($) {
 // Publiction / Periodicals
     // $(document).ready(function () {
 });
-	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-		var adobeDCView = new AdobeDC.View({clientId: "239e472f90aa4e75b88af92eef8deaf8", divId: "adobe-dc-view"});
-		adobeDCView.previewFile({
-			content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-			metaData:{fileName: "Bodea Brochure.pdf"}
-		}, {embedMode: "LIGHT_BOX"});
-	});
 
 // Removing blur for gallery
 // if($('#gallery')){
