@@ -83,7 +83,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function understrap_post_nav($cat_id) {
+	function understrap_post_nav($format) {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		$next     = get_adjacent_post( false, '', false );
@@ -98,13 +98,38 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 			<h5 class="font-weight-bolder text-dark py-2" style="border-bottom:dotted #d2d5d8 .1px">Related Articles</h5>
 			<div class="row">
 			<?php
-			$related_post = new WP_Query(array(
-				'cat' => $cat_id,
-				'posts_per_page' => 3,
-				'orderby' => 'date',
-				'order' => 'DESC'
-			));
+				if($format === 'single'){
+				$related_post = new WP_Query(array(
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'post_format',
+							'field'    => 'slug',
+							// 'terms'    => array( 'post-format-'.$format ),
+							'operator' => 'NOT EXISTS',
+						),
+					),
+					'posts_per_page' => 3,
+					'orderby' => 'date',
+					'order' => 'DESC',
+
+				));
+				}else{
+				$related_post = new WP_Query(array(
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'post_format',
+							'field'    => 'slug',
+							'terms'    => array( 'post-format-'.$format ),
+						),
+					),
+					'posts_per_page' => 3,
+					'orderby' => 'date',
+					'order' => 'DESC',
+
+				));
+		}
 			while($related_post->have_posts()) : $related_post->the_post();
+			// var_dump($related_post);
                 $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                 // ImgMagick
                 // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());

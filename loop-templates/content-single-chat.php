@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-Chat / Publication
+<!-- Chat / Publication -->
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 
@@ -21,11 +21,14 @@ Chat / Publication
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+	<!-- Download link -->
+		<a class="text-muted my-1" href="<?php echo get_field('publication_pdf')?>" download>
+			<i class="fas fa-download"></i> <span class="small">Download</span>
+		</a>
 		<?php
 		$pdf_url = get_field('publication_pdf');
 			echo "<script>
 			let url = '$pdf_url';
-			console.log(url);
 				document.addEventListener('adobe_dc_view_sdk.ready', function(){ 
 					var adobeDCView = new AdobeDC.View({clientId: '239e472f90aa4e75b88af92eef8deaf8', divId: 'adobe-dc-view'});
 					adobeDCView.previewFile({
@@ -35,7 +38,6 @@ Chat / Publication
 				});
 			</script>"
 		?>
-		<?php the_content(); ?>
 		<div id="adobe-dc-view" style="height:940px"></div>
 		<?php
 		wp_link_pages(

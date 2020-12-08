@@ -8,10 +8,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-Aside / Periodical
+<!-- Aside / Periodical -->
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
-
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 		<div class="entry-meta">
@@ -21,13 +20,23 @@ Aside / Periodical
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-
-	<?php
-	$field = get_field('periodical_pdf');
-	var_dump($field);
-	?>
-		<?php the_content(); ?>
-
+		<a class="text-muted my-1 text-right" href="<?php echo get_field('periodical_pdf')?>" download>
+			<i class="fas fa-download"></i> <span class="small">Download</span>
+		</a>
+		<?php
+		$pdf_url = get_field('periodical_pdf');
+			echo "<script>
+			let url = '$pdf_url';
+				document.addEventListener('adobe_dc_view_sdk.ready', function(){ 
+					var adobeDCView = new AdobeDC.View({clientId: '239e472f90aa4e75b88af92eef8deaf8', divId: 'periodical-dc-view'});
+					adobeDCView.previewFile({
+						content:{location: {url: url}},
+						metaData:{fileName: 'Bodea Brochure.pdf'}
+					}, {});
+				});
+			</script>"
+		?>
+		<div id="periodical-dc-view" style="height:940px"></div>
 		<?php
 		wp_link_pages(
 			array(

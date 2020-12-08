@@ -35,7 +35,7 @@ $('ul.navbar-nav li.menu-item-has-children').hover(function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
 // lazyloading images
-$("img").addClass("lazyload blur-up")
+$("img").addClass("lazyload blur-up");
 // RoyalSlider
 jQuery(document).ready(function ($) {
     // jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
@@ -169,6 +169,13 @@ jQuery(document).ready(function ($) {
 // Publiction / Periodicals
     // $(document).ready(function () {
 });
+	// document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+	// 	var adobeDCView = new AdobeDC.View({clientId: "239e472f90aa4e75b88af92eef8deaf8", divId: "adobe-dc-view"});
+	// 	adobeDCView.previewFile({
+	// 		content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+	// 		metaData:{fileName: "Bodea Brochure.pdf"}
+	// 	}, {embedMode: "LIGHT_BOX"});
+	// });
 
 // Removing blur for gallery
 // if($('#gallery')){
