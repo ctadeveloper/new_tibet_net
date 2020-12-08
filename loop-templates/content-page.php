@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title border-bottom py-2">', '</h1>' ); ?>
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( '<i class="fas fa-edit"></i> ', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</header><!-- .entry-header -->
 	<div class="entry-content py-3">
