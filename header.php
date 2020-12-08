@@ -22,6 +22,7 @@ $container = get_theme_mod('understrap_container_type');
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!-- <link rel="stylesheet" href="/css/fontawesome.min.css"> -->
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src="<?php get_template_directory_uri()?>/js/jquery.min.js"></script> -->
     <?php wp_head(); ?>

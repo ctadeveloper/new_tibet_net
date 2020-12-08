@@ -23,13 +23,11 @@ Chat / Publication
 	<div class="entry-content">
 		<?php
 	$field = get_field('publication_pdf');
-	// var_dump($field);
+	var_dump($field);
 	?>
-		<!-- <?php the_content(); ?> -->
-		<div id="books">
+		<?php the_content(); ?>
+		<div id="adobe-dc-view"></div>
 
-			<img src="../page1.jpg" />
-		</div>
 		<?php
 		wp_link_pages(
 			array(

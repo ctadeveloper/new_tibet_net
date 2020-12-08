@@ -76,8 +76,8 @@ defined( 'ABSPATH' ) || exit;
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-
+	<?php 
+	if ( !empty( get_the_content() ) ):?>
 	<div class="entry-content m-0 text-muted">
 		<a href="<?php echo get_permalink(); ?>">
 			<?php echo get_print_excerpt(150).'..'; ?>
@@ -90,9 +90,9 @@ defined( 'ABSPATH' ) || exit;
 			)
 		);
 		?>
-
+		
 	</div><!-- .entry-content -->
-
+	<?php endif; ?>
 	<!-- .entry-footer -->
 
 </article><!-- #post-## -->
