@@ -20,7 +20,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-12 py-2">
 				<header class="page-header">
 						<?php
-						the_archive_title( '<h1 class="h3 page-title text-white class="page-title">', '</h1>' );
+						// the_archive_title( '<h1 class="h3 page-title text-white class="page-title">', '</h1>' );
+						single_cat_title( '<h1 class="h3 page-title text-white class="page-title">', '</h1>' );
 						?>
 				</header><!-- .page-header -->
 			</div>
