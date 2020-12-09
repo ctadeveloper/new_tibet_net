@@ -6,9 +6,11 @@
             </div>
             <div class="col-12">
                 <div class="importantTopciSlider">
+
                     <?php
                     $sidebar_topic = new WP_Query(array(
-                        // 'post_type' => 'cta-sb-topics',
+                        'post_type' => 'cta-sb-topics',
+                        'post_status' => 'publish',
                         'posts_per_page' => 6,
                         'orderby' => 'date',
                         'order' => 'DESC',
@@ -32,7 +34,10 @@
                     ?>
                         <div class="mx-3">
                             <a href="<?php echo get_permalink(); ?>">
-                                <?php echo $img_html; ?>
+                                <?php
+                                    echo the_field('topic_image');
+                                    echo the_field('topic_link');
+                                ?>
                             </a>
                         </div>
                     <?php endwhile;
