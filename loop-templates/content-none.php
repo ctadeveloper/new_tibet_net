@@ -10,7 +10,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-Tibet.ne
 <section class="no-results not-found">
 
 	<header class="page-header">

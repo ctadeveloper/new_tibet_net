@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 	</div>
 </section>
-<div class="wrapper" id="archive-wrapper">
+<div id="archive-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 

@@ -16,7 +16,6 @@ a {
 	color: #343a40 !important;
 }
 
-
 a:hover {
 	color: $hover !important;
 	transition: 0.5s;
@@ -458,6 +457,17 @@ body {
 	a:hover {
 		color: $hover !important;
 		transition: 0.5s;
+	}
+}
+/**
+ * Pagination css
+*/
+.pagination{
+	.page-item.active {
+		.page-link{
+			background-color: #103b55 !important;
+			border:#103b55;
+		}
 	}
 }
 

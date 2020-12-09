@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<?php edit_post_link( __( '<i class="fas fa-edit"></i> ', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
 		<div class="entry-meta">
 			<?php understrap_posted_on(); ?>
