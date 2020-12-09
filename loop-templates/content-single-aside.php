@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- Aside / Periodical -->
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<?php the_title( '<h2 class="entry-title border-bottom pb-2">', '</h2>' ); ?>
 
 		<div class="entry-meta">
 			<?php understrap_posted_on(); ?>
