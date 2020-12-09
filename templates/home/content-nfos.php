@@ -7,12 +7,9 @@
                 <?php
                 $nfos = new WP_Query(array(
                     'category_name' => 'featured-flash-news',
-                    // 'cat' => 1,
-                    // 'cat'=>29,
                     'posts_per_page' => 1,
                     'orderby' => 'date', 'order' => 'DESC',
-                    // 'paged' => $paged,
-                    // 'offset' => 2,
+                    'offset' => 2,
 
                 ));
                 while ($nfos->have_posts()) : $nfos->the_post();
@@ -23,9 +20,9 @@
                     $cta_has_thumb = '';
                     $post_index_img = cta_thumb(770, 370);
                     if ($post_index_img != '') {
-                        $img_html = '<img class="list-item-image img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                        $img_html = '<img class=" w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                     } else { // if (!is_page_template( 'page-homepage.php' )) {
-                        $img_html = '<img class="list-item-image img-responsive w-100 lazyload blur-up" height="370" width="770" data-src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                        $img_html = '<img class="w-100 lazyload blur-up" height="370" width="770" data-src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
                         // $cta_has_thumb = ' cta_no_thumb';
                     }
                     ?>
@@ -96,6 +93,7 @@
                     ?>
                 </div>
             </div>
+            <!-- CTA Report -->
             <div class="col-md-6">
                 <h5 class="text-dark border-left pl-2" style="border-left: solid 3px #28a745 !important;">CTA Report</h5>
                 <?php include(TEMPLATEPATH . '/templates/home/content-cta_report.php'); ?>
