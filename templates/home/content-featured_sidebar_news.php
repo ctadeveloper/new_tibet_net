@@ -12,9 +12,6 @@
                 $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                 // echo $default;
                 // ImgMagick
-                // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                // $cta_has_thumb = '';
-                // $post_index_img = cta_thumb(60, 60);
                 $post_index_img = thumbResizeIM($thumb_url, 60, 60, get_the_ID());
 
                 if ($post_index_img != '') {

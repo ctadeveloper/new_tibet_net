@@ -1,8 +1,6 @@
   <?php
     $cta_has_thumb = '';
     $post_index_img = cta_thumb(280, 140);
-
-
     if ($post_index_img != '') {
         $img_html = '<img class="list-item-image img-responsive rounded w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
     } else { // if (!is_page_template( 'page-homepage.php' )) {

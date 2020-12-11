@@ -25,7 +25,7 @@
                 // Thumbnail Url
                 $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                 if($thumb_url == ''){
-                    $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
+                    $thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
                 }
                 // ImgMagick
                 // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
