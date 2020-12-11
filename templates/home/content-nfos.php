@@ -15,10 +15,7 @@
                 while ($nfos->have_posts()) : $nfos->the_post();
                     // Thumbnail Url
                     $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                    // ImgMagick
-                    // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                    $cta_has_thumb = '';
-                    $post_index_img = cta_thumb(770, 370);
+                    $post_index_img = thumbResizeIM($thumb_url, 770, 370, get_the_ID());
                     if ($post_index_img != '') {
                         $img_html = '<img class=" w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                     } else { // if (!is_page_template( 'page-homepage.php' )) {
@@ -61,8 +58,9 @@
                         $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                         // ImgMagick
                         // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                        $cta_has_thumb = '';
-                        $post_index_img = cta_thumb(280, 140);
+                        // $cta_has_thumb = '';
+                        // $post_index_img = cta_thumb(280, 140);
+                        $post_index_img = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                         if ($post_index_img != '') {
                             $img_html = '<img class="list-item-image img-responsive w-100 rounded-top" src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                         } else { // if (!is_page_template( 'page-homepage.php' )) {

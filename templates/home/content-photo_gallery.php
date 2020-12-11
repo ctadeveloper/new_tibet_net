@@ -22,16 +22,17 @@
                 'paged' => $paged
             ));
             while ($galleries->have_posts()) : $galleries->the_post();
-                if (has_post_thumbnail()) {
-                    $thumb_id = get_post_thumbnail_id();
-                    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'excerpt-thumb', true);
-                    $thumb_url = $thumb_url_array[0];
+                $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                if($thumb_url == ''){
+                    $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
                 }
-                $post_index_img = cta_thumb(280, 140);
+                // $post_index_img = cta_thumb(280, 140);
+                $post_index_img = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                 if ($post_index_img != '') {
                     $img_html = '<img class="img-responsive rounded w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="img-responsive w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                    $img_html = '<img class="rounded img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+
                     // $cta_has_thumb = ' cta_no_thumb';
                 }
             ?>

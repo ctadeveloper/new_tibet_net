@@ -69,8 +69,8 @@ function cta_thumb($width, $height)
         // return $thumb_url;
         return thumbResizeIM($thumb_url, $width, $height, $post->ID);
     } else {
-        $thumb_url = catch_that_image();
-        // $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
+        // $thumb_url = catch_that_image();
+        $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
         // return $thumb_url;
         if ($thumb_url != '' && file_exists($thumb_url)) {
             return thumbResizeIM($thumb_url, $width, $height, '2020');

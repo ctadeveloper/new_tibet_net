@@ -22,8 +22,8 @@
                         // ImgMagick
                         // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                         $cta_has_thumb = '';
-                        $post_index_img = cta_thumb(180, 120);
-                        $default_thumb = default_thumb(180, 120);
+                        $post_index_img = cta_thumb(140, 80);
+                        $default_thumb = default_thumb(140,80);
                         if ($post_index_img != '') {
                             $img_html = '<img class="list-item-image img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                         } else { // if (!is_page_template( 'page-homepage.php' )) {

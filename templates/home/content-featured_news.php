@@ -15,6 +15,7 @@
                     $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                     // ImgMagick
                     $thumb1 = thumbResizeIM($thumb_url, 770, 370, get_the_ID());
+
                 ?>
                     <div class="rsContent">
                         <div class="bContainer">

@@ -24,15 +24,17 @@
             while ($human_right->have_posts()) : $human_right->the_post();
                 // Thumbnail Url
                 $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                if($thumb_url == ''){
+                    $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
+                }
                 // ImgMagick
                 // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                $cta_has_thumb = '';
-                $post_index_img = cta_thumb(280, 140);
-                $default_thumb = default_thumb(280, 140);
+                $post_index_img = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
+                // $default_thumb = default_thumb(280, 140);
                 if ($post_index_img != '') {
                     $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $default_thumb. '" alt="' . get_the_title() . '">' . "\r\n";
+                    $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $post_index_img. '" alt="' . get_the_title() . '">' . "\r\n";
                     // $img_html = '<img class="img-responsive w-100 rounded-top"  src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
                 }
                 $tax_args = array('orderby' => 'none');
