@@ -63,25 +63,28 @@ function cta_thumb($width, $height)
     global $post;
 
     if (get_the_post_thumbnail($post->ID) != '') {
-
         $thumb_id = get_post_thumbnail_id();
         $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
         $thumb_url = $thumb_url_array[0];
         // return $thumb_url;
         return thumbResizeIM($thumb_url, $width, $height, $post->ID);
     } else {
-
         $thumb_url = catch_that_image();
+        // $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
         // return $thumb_url;
         if ($thumb_url != '' && file_exists($thumb_url)) {
-            return thumbResizeIM($thumb_url, $width, $height, $post->ID);
+            return thumbResizeIM($thumb_url, $width, $height, '2020');
         } else {
 
             return '';
         }
     }
 }
-
+function default_thumb($width,$height){
+    global $post;
+    $thumb_url = 'http://new.tibet.net:8888/wp-content/themes/cta-official/img/cta_grid_default.jpg';
+    return thumbResizeIM($thumb_url, $width, $height, $post->ID);
+}
 // Catch that image
 function catch_that_image()
 {

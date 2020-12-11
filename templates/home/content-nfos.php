@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h5 class="text-dark border-left pl-2 border-primary">Tibet Around the World</h5>
+                <h5 class="text-dark border-left pl-2 mb-3 border-primary">TIBET AROUND THE WORLD</h5>
                 <?php
                 $nfos = new WP_Query(array(
                     'category_name' => 'featured-flash-news',
@@ -45,7 +45,7 @@
                 wp_reset_postdata();
                 ?>
                 <!-- other contents -->
-                <div class="row">
+                <div class="row py-3">
                     <?php
                     $flash_news_loop = new WP_Query(array(
                         // 'category_name' => 'featured-flash-news',
@@ -95,7 +95,7 @@
             </div>
             <!-- CTA Report -->
             <div class="col-md-6">
-                <h5 class="text-dark border-left pl-2" style="border-left: solid 3px #28a745 !important;">CTA Report</h5>
+                <h5 class="text-dark font-weight-bolder border-left pl-2" style="border-left: solid 3px #28a745 !important;">CTA REPORTS</h5>
                 <?php include(TEMPLATEPATH . '/templates/home/content-cta_report.php'); ?>
             </div>
         </div>

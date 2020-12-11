@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
-                <h6 class="text-dark font-weight-bolder border-left pl-2 border-danger">ANNOUNCEMENTS</h6>
+                <h5 class="text-dark font-weight-bolder border-left pl-2 border-danger">ANNOUNCEMENTS</h6>
             </div>
             <?php
             $human_right = new WP_Query(array(
@@ -28,17 +28,18 @@
                 // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                 $cta_has_thumb = '';
                 $post_index_img = cta_thumb(280, 140);
+                $default_thumb = default_thumb(280, 140);
                 if ($post_index_img != '') {
                     $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="img-responsive w-100 rounded-top"  src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
-                    // $cta_has_thumb = ' cta_no_thumb';
+                    $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $default_thumb. '" alt="' . get_the_title() . '">' . "\r\n";
+                    // $img_html = '<img class="img-responsive w-100 rounded-top"  src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
                 }
                 $tax_args = array('orderby' => 'none');
                 $term_num = 0;
                 $terms = wp_get_post_terms($post->ID, 'cta_announcement_category', $tax_args);
             ?>
-                <div class="col-md-3 col-sm-6 col-6">
+                <div class="col-md-3 col-sm-6 col-6 py-3">
                     <div class="p-0 position-relative">
                         <a href="<?php echo get_permalink(); ?>">
                             <?php echo $img_html; ?>

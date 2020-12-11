@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
-                <h6 class="text-dark font-weight-bolder border-left pl-2 border-danger">HUMAN RIGHT & SITUATION IN TIBET</h6>
+                <h5 class="text-dark font-weight-bolder border-left pl-2 border-danger">HUMAN RIGHT & SITUATION IN TIBET</h6>
             </div>
             <?php
             $human_right = new WP_Query(array(
@@ -27,7 +27,7 @@
                     // $cta_has_thumb = ' cta_no_thumb';
                 }
             ?>
-                <div class="col-md-3 col-sm-6 col-6">
+                <div class="col-md-3 col-sm-6 col-6 py-3">
                     <a href="<?php echo get_permalink(); ?>">
                         <?php echo $img_html; ?>
                     </a>
