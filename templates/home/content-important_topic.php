@@ -19,10 +19,12 @@
                         // Thumbnail Url
 
                         // $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                        $thumb_url = the_field('topic_image');
+                        // echo $thumb_url;
                         // ImgMagick
                         // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                        $cta_has_thumb = '';
-                        $post_index_img = cta_thumb(140, 80);
+                        // $cta_has_thumb = '';
+                        $post_index_img = thumbResizeIM($thumb_url,140, 80,get_the_ID());
                         $default_thumb = default_thumb(140,80);
                         if ($post_index_img != '') {
                             $img_html = '<img class="list-item-image img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
@@ -31,11 +33,11 @@
                         }
                     ?>
                         <div class="mx-3">
-                            <a href="<?php echo get_permalink(); ?>">
+                            <a href="<?php echo the_field('topic_link'); ?>">
                                     <?php echo $img_html ?>
                                 <?php
                                     // echo the_field('topic_image');
-                                    // echo the_field('topic_link');
+                                    
                                 ?>
                             </a>
                         </div>

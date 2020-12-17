@@ -84,6 +84,8 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 	 * Display navigation to next/previous post when applicable.
 	 */
 	function understrap_post_nav($format) {
+		global $post;
+		
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		$next     = get_adjacent_post( false, '', false );
@@ -129,16 +131,17 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 				));
 		}
 			while($related_post->have_posts()) : $related_post->the_post();
-			// var_dump($related_post);
-                $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                // ImgMagick
-                // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                $cta_has_thumb = '';
-                $post_index_img = cta_thumb(280, 140);
+				$thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+			// ImgMagick
+				if($thumb_url == ''){
+				$thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
+			}
+			// $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
+				$post_index_img = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                 if ($post_index_img != '') {
                     $img_html = '<img class="rounded img-responsive w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="rounded img-responsive w-100" height="160" width="280 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                    $img_html = '<img class="rounded img-responsive w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                     // $cta_has_thumb = ' cta_no_thumb';
                 }
 			?>

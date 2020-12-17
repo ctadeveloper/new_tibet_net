@@ -14,13 +14,22 @@
                     // Thumbnail Url
                     $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                     // ImgMagick
-                    $thumb1 = thumbResizeIM($thumb_url, 770, 370, get_the_ID());
+                        if($thumb_url == ''){
+                            $thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
+                        }
+                        $post_index_img = thumbResizeIM($thumb_url, 770, 370, get_the_ID());
+                        if ($post_index_img != '') {
+                            $img_html = '<img class="w-100 img_size rounded-top"  src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                        } else { // if (!is_page_template( 'page-homepage.php' )) {
+                            $img_html = '<img class="w-100 img_size rounded-top"  src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                            // $cta_has_thumb = ' cta_no_thumb';
+                        }
 
                 ?>
                     <div class="rsContent">
                         <div class="bContainer">
                             <div class="image_overlay">
-                                <img src="<?php echo $thumb1; ?>" alt="<?php echo esc_html(get_the_title()); ?>" class="img-responsive w-100 lazyload blur-up">
+                                <?php echo $img_html; ?>
                             </div>
                             <div class="meta">
                                 <a href="<?php echo get_permalink(); ?>">

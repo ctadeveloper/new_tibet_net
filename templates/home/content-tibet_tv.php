@@ -26,7 +26,7 @@
                             $date = date_format(date_create($video->snippet->publishedAt), "F j, Y");
                             // Create Elements
                             // echo "<a class='rsImg' data-rsvideo=" . $video_id . " href=" . $video->snippet->thumbnails->standard->url . ">";
-                            echo "<a class='rsImg' data-rsvideo='https://www.youtube.com/watch?v=". $video->snippet->resourceId->videoId."' href=". $video->snippet->thumbnails->high->url.">";
+                            echo "<a class='rsImg' data-rsvideo='https://www.youtube.com/watch?v=". $video->snippet->resourceId->videoId."' alt=".$video->snippet->title." href=". $video->snippet->thumbnails->high->url.">";
                             echo "<div class='rsTmb'>";
                             echo "<h6 class='text-white'>" . $video->snippet->title . "</h6>";
                             echo "<h6 class='small text-white-50'>" . $date . "</h6>";

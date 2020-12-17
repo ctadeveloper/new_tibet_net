@@ -40,10 +40,11 @@ $container = get_theme_mod('understrap_container_type');
                 <div class="container">
                     <div class="d-flex">
                         <div class="mr-auto p-2 w-25 d-none d-sm-block">
-                            <img data-src="<?php echo get_template_directory_uri() . '/img/CTA-logo.png' ?>" class="img-fluid lazyload blur-up" alt="">
+                            <img  data-src="<?php echo get_template_directory_uri() . '/img/CTA-logo.png' ?>" data-sizes="auto"  class="img_size img-fluid lazyload blur-up" alt="">
+                            
                         </div>
                         <div class="mr-auto p-2 w-75 d-block d-sm-none">
-                            <img data-src="<?php echo get_template_directory_uri() . '/img/CTA-logo.png' ?>" class="img-fluid lazyload blur-up" alt="">
+                            <img data-src="<?php echo get_template_directory_uri() . '/img/CTA-logo.png' ?>" data-sizes="auto" class="img-fluid lazyload blur-up" alt="">
                         </div>
                         <div class="align-self-center">
                             <a href="https://xizang-zhiye.org" target="_blank" class="btn btn-sm btn-danger font-weight-bolder my-1">中文</a>
