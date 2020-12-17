@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-<article class="col-12 py-3" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article class="col-12 py-4" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <?php
 		// Thumbnail Url
 		$thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));

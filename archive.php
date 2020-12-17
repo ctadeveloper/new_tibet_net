@@ -38,6 +38,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 </section>
 <div id="archive-wrapper">
+
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
@@ -51,6 +52,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						if ( have_posts() ) {
 							?>
 							<?php
+							$query = new WP_Query(array(
+								'posts_per_page' => 1,
+
+							));
 							// Start the loop.
 							while ( have_posts() ) {
 								the_post();

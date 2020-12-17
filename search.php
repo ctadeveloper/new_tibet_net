@@ -54,15 +54,15 @@ $paged = (get_query_var('paged'))? absint(get_query_var('paged')) :1;
 					<div class="col-12">
 						<div class="row">
 							<?php 
-							$query = new WP_Query(array(
+							$posts = new WP_Query(array(
 
 								's'=>get_search_query(),
 								'paged' => $paged,
 							));
 
 						?>
-						<?php while ($query->have_posts()) :$query->the_post();?>
-							<?php if($query->current_post == 0):?>
+						<?php while ($posts->have_posts()) :$posts->the_post();?>
+							<?php if($posts->current_post == 0):?>
 								<?php get_template_part( 'loop-templates/content', 'heropost');?>
 							<?php else:?>
 							<?php  get_template_part( 'loop-templates/content', 'search' );?>
