@@ -11,8 +11,13 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
 $container = get_theme_mod( 'understrap_container_type' );
+$paged = (get_query_var('paged'))? absint(get_query_var('paged')) :1;
+if(is_category()){
+	$cat_id = get_query_var('cat');
+}else{
+	$cat_id = 1;
+}
 ?>
 <section class="bg-danger py-3">
 	<div class="container">
@@ -48,30 +53,40 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<main class="site-main container" id="main">
 				<div class="row">
-						<?php
-						if ( have_posts() ) {
-							?>
-							<?php
-							$query = new WP_Query(array(
-								'posts_per_page' => 1,
-
+				<?php 
+					if(is_archive()){
+						if(is_tax()){
+							echo is_tax();
+							// starting query
+							$posts = new WP_Query(array(
+								// 'cat' => $cat_id,
+								// 'cat' => 149,
+								// 'post_type' => 'cta-sb-topics',
+								'paged' => $paged,
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'cta-sb-topics'
+									)
+								)
 							));
-							// Start the loop.
-							while ( have_posts() ) {
-								the_post();
-								// var_dump(get_post());
-								// die();
-								/*
-								* Include the Post-Format-specific template for the content.
-								* If you want to override this in a child theme, then include a file
-								* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-								*/
-								get_template_part( 'loop-templates/content', get_post_format() );
-							}
-						} else {
-							get_template_part( 'loop-templates/content', 'none' );
+						}else{
+							// starting query
+							$posts = new WP_Query(array(
+								'cat' => $cat_id,
+								// 'cat' => 149,
+								// 'post_type' => 'cta-sb-topics',
+								'paged' => $paged,
+							));
 						}
-						?>
+					}?>
+					<?php while ($posts->have_posts()) :$posts->the_post();?>
+						<?php if($posts->current_post == 0):?>
+							<?php get_template_part( 'loop-templates/content', 'heropost');?>
+						<?php else:?>
+						<?php  get_template_part( 'loop-templates/content', get_post_format());?>
+						<?php endif;?>
+					<?php endwhile;?>
+					<?php wp_reset_postdata();?> 
 				</div>
 			</main><!-- #main -->
 			<div class="container my-4 d-flex justify-content-center">	

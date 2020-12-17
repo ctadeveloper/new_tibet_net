@@ -13,15 +13,17 @@ $(window).on("scroll", function () {
         $("#main-nav").removeClass("sticky_header");
     }
 });
+// Adding search icon at menu
+$("#main-menu").append("<i id='home-search-icon' class='fas fa-search align-middle fa-1x text-white px-1 pt-3' style='font-size:1.5em'></i>");
+$("#home-search-icon").click(function(){
+   alert("RInzin");
+})
 
-// data-toggle="modal" data-target="#exampleModal"
-// $("#myModal").modal('show');
-
-$("#menu-item-160184").click(function () {
-    console.log("check");
-    $("#exampleModal").addClass("modal fade show");
-    $("#exampleModal").css('display', 'block');
-});
+// $("#menu-item-160184").click(function () {
+//     console.log("check");
+//     $("#exampleModal").addClass("modal fade show");
+//     $("#exampleModal").css('display', 'block');
+// });
 
 // 
 /**

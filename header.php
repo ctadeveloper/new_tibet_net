@@ -47,8 +47,17 @@ $container = get_theme_mod('understrap_container_type');
                             <img data-src="<?php echo get_template_directory_uri() . '/img/CTA-logo.png' ?>" data-sizes="auto" class="img-fluid lazyload blur-up" alt="">
                         </div>
                         <div class="align-self-center">
-                            <a href="https://xizang-zhiye.org" target="_blank" class="btn btn-sm btn-danger font-weight-bolder my-1">中文</a>
-                            <a href="https://bod.asia" target="_blank" class="btn btn-sm btn-danger mr-2 font-weight-bolder">བོད་ཡིག</a>
+                            <a href="https://xizang-zhiye.org" target="_blank" class="btn btn-sm btn-danger font-weight-bolder my-1 text-white">中文</a>
+                            <a href="https://bod.asia" target="_blank" class="btn btn-sm btn-danger mr-2 font-weight-bolder text-white" >བོད་ཡིག</a>
+                            <!-- <form method="get" id="searchform" action="http://new.tibet.net:8888/" role="search">
+                                <label class="sr-only" for="s">Search</label>
+                                <div class="input-group">
+                                    <input class="field form-control w-25" id="s" name="s" type="text" required placeholder="Search …" value="">
+                                    <span class="input-group-append">
+                                    <button class="submit btn btn-dark small"><i class="fas fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form> -->
                         </div>
                     </div>
                     <!-- <ul>

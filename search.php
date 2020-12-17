@@ -55,11 +55,9 @@ $paged = (get_query_var('paged'))? absint(get_query_var('paged')) :1;
 						<div class="row">
 							<?php 
 							$posts = new WP_Query(array(
-
 								's'=>get_search_query(),
 								'paged' => $paged,
 							));
-
 						?>
 						<?php while ($posts->have_posts()) :$posts->the_post();?>
 							<?php if($posts->current_post == 0):?>
