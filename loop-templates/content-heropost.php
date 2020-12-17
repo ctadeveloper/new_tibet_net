@@ -26,16 +26,16 @@ defined( 'ABSPATH' ) || exit;
 		}
 	?>
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-8">
             <a href="<?php echo get_permalink(); ?>">
                 <?php echo $img_html; ?>
             </a>
         </div>
-        <div class="col-6">
+        <div class="col-md-4">
             <header class="entry-header">
                 <h5 class="entry-title text-dark pt-2">
                     <a href="<?php echo get_permalink(); ?>">
-                        <?php echo excerpt_title_length(50) ?>
+                        <?php echo excerpt_title_length(100) ?>
                     </a>
                 </h3>
                 <?php if ( 'post' === get_post_type() ) : ?>
@@ -51,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
                 if ( !empty( get_the_content() ) ):?>
                 <div class="entry-content m-0 text-muted">
                     <a href="<?php echo get_permalink(); ?>">
-                        <?php echo get_print_excerpt(450).'..'; ?>
+                        <?php echo get_print_excerpt(380).'..'; ?>
                     </a>
                     <?php
                     wp_link_pages(

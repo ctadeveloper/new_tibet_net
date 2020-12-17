@@ -53,20 +53,40 @@ if(is_category()){
 
 			<main class="site-main container" id="main">
 				<div class="row">
+					<!-- TEsting -->
+					<?php
+					$args = array(
+						'post_type' => 'post',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'cta-periodicals',
+							),
+						),
+					);
+					$query = new WP_Query( $args );
+					?>
+
+					<!-- TEsting End -->
 				<?php 
 					if(is_archive()){
 						if(is_tax()){
-							echo is_tax();
+
+							$tax = $wp_query->get_queried_object();
+							// echo get_query_var('term');
+							// echo get_query_var('slug');
+
+							// var_dump($tax->terms);
+							// global $wp_taxonomies;
+							// var_dump($wp_taxonomies);
+							// var_dump(get_terms());
 							// starting query
 							$posts = new WP_Query(array(
-								// 'cat' => $cat_id,
-								// 'cat' => 149,
-								// 'post_type' => 'cta-sb-topics',
-								'paged' => $paged,
+								// 'cat' => 142,
+								// 'paged' => $paged,
 								'tax_query' => array(
-									array(
-										'taxonomy' => 'cta-sb-topics'
-									)
+									// 'taxonomy' => get_query_var('term'),
+									'field' => 217,
+									// 'terms' => 329,
 								)
 							));
 						}else{
