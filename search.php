@@ -62,30 +62,16 @@ $paged = (get_query_var('paged'))? absint(get_query_var('paged')) :1;
 
 						?>
 						<?php while ($query->have_posts()) :$query->the_post();?>
-						<?php if($query->current_post == 0):?>
-							<?php get_template_part( 'loop-templates/content', 'heropost');?>
-						<?php else:?>
-						<?php  get_template_part( 'loop-templates/content', 'search' );?>
-						<?php endif;?>
-
+							<?php if($query->current_post == 0):?>
+								<?php get_template_part( 'loop-templates/content', 'heropost');?>
+							<?php else:?>
+							<?php  get_template_part( 'loop-templates/content', 'search' );?>
+							<?php endif;?>
 						<?php endwhile;?>
-				<!-- Original Success -->
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							/*
-							* Run the loop for the search to output the results.
-							* If you want to overload this in a child theme then include a file
-							* called content-search.php and that will be used instead.
-							*/
-							get_template_part( 'loop-templates/content', 'search' );
-						endwhile;
-						?>
 						<?php else : ?>
 							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
 						<?php endif; ?>
-						<?php wp_reset_postdata();?>
+						<?php wp_reset_postdata();?> 
 						</div>
 					</div>
 			</main><!-- #main -->
