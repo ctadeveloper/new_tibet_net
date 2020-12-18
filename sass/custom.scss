@@ -55,7 +55,9 @@ body {
 	a {
 		text-decoration: none !important;
 	}
-
+	#home-search-icon:hover{
+			cursor: pointer;
+	}
 	// a:hover{
 	//     color:$hover !important;
 	//     transition: .2s;

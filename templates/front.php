@@ -13,6 +13,7 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
     <?php
+// get_template_part('/templates/search', 'modal');
     /* Featured News */
     get_template_part('/templates/home/content', 'featured_news');
 
@@ -41,4 +42,8 @@ get_header(); ?>
     get_template_part('/templates/home/content', 'photo_gallery');
     ?>
 <!-- Footer -->
+<?php 
+
+?>
 <?php get_footer();
+get_template_part('/templates/search', 'modal');

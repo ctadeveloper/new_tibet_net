@@ -16,14 +16,9 @@ $(window).on("scroll", function () {
 // Adding search icon at menu
 $("#main-menu").append("<i id='home-search-icon' class='fas fa-search align-middle fa-1x text-white px-2 pt-3' style='font-size:1.5em'></i>");
 $("#home-search-icon").click(function(){
-   alert("RInzin");
+        $("#myModal").modal();
+        console.log("this is clicked");
 })
-
-// $("#menu-item-160184").click(function () {
-//     console.log("check");
-//     $("#exampleModal").addClass("modal fade show");
-//     $("#exampleModal").css('display', 'block');
-// });
 
 // 
 /**

@@ -32,24 +32,6 @@ if(is_category()){
 			</div>
 		</div>
 	</div>
-	<?php
-		$tax = $wp_query->get_queried_object();
-		var_dump($tax);
-		$categories = get_categories(array(
-			'orderby' => 'name',
-			'parent' => $categories[0]->term_id,
-			'order' => 'ASC',
-			'tax_query' =>(array(
-				array(
-					'taxonomy' => 'cta_content_type',
-					'field' => 'slug',
-					'terms' => $tax->slug,
-				)
-			))
-		));
-		foreach ($categories as $category):?>
-		<?php var_dump($category->name);?>
-		<?php endforeach; ?>
 	<div class="border-bottom border-light"></div>
 	<div class="container pt-2">
 		<div class="row">
