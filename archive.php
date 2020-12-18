@@ -32,6 +32,24 @@ if(is_category()){
 			</div>
 		</div>
 	</div>
+	<?php
+		$tax = $wp_query->get_queried_object();
+		var_dump($tax);
+		$categories = get_categories(array(
+			'orderby' => 'name',
+			'parent' => $categories[0]->term_id,
+			'order' => 'ASC',
+			'tax_query' =>(array(
+				array(
+					'taxonomy' => 'cta_content_type',
+					'field' => 'slug',
+					'terms' => $tax->slug,
+				)
+			))
+		));
+		foreach ($categories as $category):?>
+		<?php var_dump($category->name);?>
+		<?php endforeach; ?>
 	<div class="border-bottom border-light"></div>
 	<div class="container pt-2">
 		<div class="row">
@@ -43,14 +61,8 @@ if(is_category()){
 	</div>
 </section>
 <div id="archive-wrapper">
-
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
-
 		<div class="row">
-
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
 			<main class="site-main container" id="main">
 				<div class="row">
 					<?php 
@@ -58,6 +70,7 @@ if(is_category()){
 							if(is_tax()){
 								$tax = $wp_query->get_queried_object();
 								$posts = new WP_Query(array(
+									'paged' => $paged,
 									'tax_query' =>array(
 										array(
 											'taxonomy' => 'cta_content_type',
