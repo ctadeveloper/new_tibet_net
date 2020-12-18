@@ -9,10 +9,9 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
 $container = get_theme_mod( 'understrap_container_type' );
 $paged = (get_query_var('paged'))? absint(get_query_var('paged')) :1;
-
+global $wp_query;
 ?>
 <section class="bg-danger py-2">
 	<div class="container">
@@ -28,7 +27,11 @@ $paged = (get_query_var('paged'))? absint(get_query_var('paged')) :1;
 								);
 								?>
 							</h3>
-
+							<h6 class="medium text-white-50">
+								<?php
+									echo $wp_query->found_posts.' results found.';
+								?>
+							</h6>
 					</header><!-- .page-header -->
 			</div>
 		</div>

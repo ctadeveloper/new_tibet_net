@@ -13,7 +13,7 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
     <?php
-// get_template_part('/templates/search', 'modal');
+    get_template_part('/templates/home/content', 'carousel');
     /* Featured News */
     get_template_part('/templates/home/content', 'featured_news');
 
