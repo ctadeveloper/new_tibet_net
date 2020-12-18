@@ -53,56 +53,35 @@ if(is_category()){
 
 			<main class="site-main container" id="main">
 				<div class="row">
-					<!-- TEsting -->
-					<?php
-					$args = array(
-						'post_type' => 'post',
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'Publications',
-							),
-						),
-					);
-					?>
-
-					<!-- TEsting End -->
-				<?php 
-					if(is_archive()){
-						if(is_tax()){
-
-							$tax = $wp_query->get_queried_object();
-							//   get_query_var('term');
-							// echo get_query_var('slug');
-							var_dump($tax);
-							// var_dump($tax->terms);
-							// global $wp_taxonomies;
-							// var_dump($wp_taxonomies);
-							// echo get_query_var('term');
-							// starting query
-							$posts = new WP_Query(array(
-								// 'content_type' => 'Publications',
-								'post_type' => 'Vidoes',
-								// 'category_name' => 'get_query_var('term')',
-								'post_status' => 'publish',
-							));
-						}else{
-							// starting query
-							$posts = new WP_Query(array(
-								'cat' => $cat_id,
-								// 'cat' => 149,
-								// 'post_type' => 'cta-sb-topics',
-								'paged' => $paged,
-							));
-						}
-					}?>
-					<?php while ($posts->have_posts()) :$posts->the_post();?>
-						<?php if($posts->current_post == 0):?>
-							<?php get_template_part( 'loop-templates/content', 'heropost');?>
-						<?php else:?>
-						<?php  get_template_part( 'loop-templates/content', get_post_format());?>
-						<?php endif;?>
-					<?php endwhile;?>
-					<?php wp_reset_postdata();?> 
+					<?php 
+						if(is_archive()){
+							if(is_tax()){
+								$tax = $wp_query->get_queried_object();
+								$posts = new WP_Query(array(
+									'tax_query' =>array(
+										array(
+											'taxonomy' => 'cta_content_type',
+											'field' => 'slug',
+											'terms' => $tax->slug,
+										)
+									)
+								));
+							}else{
+								// starting query
+								$posts = new WP_Query(array(
+									'cat' => $cat_id,
+									'paged' => $paged,
+								));
+							}
+						}?>
+						<?php while ($posts->have_posts()) :$posts->the_post();?>
+							<?php if($posts->current_post == 0):?>
+								<?php get_template_part( 'loop-templates/content', 'heropost');?>
+							<?php else:?>
+							<?php  get_template_part( 'loop-templates/content', get_post_format());?>
+							<?php endif;?>
+						<?php endwhile;?>
+						<?php wp_reset_postdata();?> 
 				</div>
 			</main><!-- #main -->
 			<div class="container my-4 d-flex justify-content-center">	
