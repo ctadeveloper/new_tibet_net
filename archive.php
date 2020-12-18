@@ -59,11 +59,10 @@ if(is_category()){
 						'post_type' => 'post',
 						'tax_query' => array(
 							array(
-								'taxonomy' => 'cta-periodicals',
+								'taxonomy' => 'Publications',
 							),
 						),
 					);
-					$query = new WP_Query( $args );
 					?>
 
 					<!-- TEsting End -->
@@ -72,22 +71,19 @@ if(is_category()){
 						if(is_tax()){
 
 							$tax = $wp_query->get_queried_object();
-							// echo get_query_var('term');
+							//   get_query_var('term');
 							// echo get_query_var('slug');
-
+							var_dump($tax);
 							// var_dump($tax->terms);
 							// global $wp_taxonomies;
 							// var_dump($wp_taxonomies);
-							// var_dump(get_terms());
+							// echo get_query_var('term');
 							// starting query
 							$posts = new WP_Query(array(
-								// 'cat' => 142,
-								// 'paged' => $paged,
-								'tax_query' => array(
-									// 'taxonomy' => get_query_var('term'),
-									'field' => 217,
-									// 'terms' => 329,
-								)
+								// 'content_type' => 'Publications',
+								'post_type' => 'Vidoes',
+								// 'category_name' => 'get_query_var('term')',
+								'post_status' => 'publish',
 							));
 						}else{
 							// starting query
