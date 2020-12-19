@@ -1,6 +1,11 @@
 <div class="container">
+    <?php if(wp_is_mobile()):?>
+        <div class="bg-light">This is mobile version</div>
+    <?php else:?>
+        <div class="bg-danger">This is Desktop version</div>
+    <?php endif;?>
     <div class="row">
-        <div class="col-8" id="hFeaturedNews">
+        <div class="col-md-8 col-sm-12" id="hFeaturedNews">
             <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner">
                     <?php
@@ -36,11 +41,11 @@
                     </div>    
                     <?php } ?> 	
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <a class="carousel-control-prev bg-secondary rounded" href="#carouselExampleCaptions" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <!-- <span class="sr-only">Previous</span> -->
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <a class="carousel-control-next bg-secondary rounded" href="#carouselExampleCaptions" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>

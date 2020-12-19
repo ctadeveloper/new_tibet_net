@@ -1,19 +1,4 @@
 <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators">
-		<?php
-			$indicator=0;
-            $servicePost = new WP_Query(array(
-                'category_name' => 'featured-flash-news',
-                'posts_per_page' => 4,
-                'orderby' => 'date', 'order' => 'DESC',
-                'paged' => $paged
-            ));
-            while($servicePost->have_posts()){
-                $servicePost->the_post();
-		?>
-            <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $indicator; ?>" class="<?php echo ($indicator == 1) ? 'active':''; ?>"></li>
-		<?php $indicator++; } ?>
-    </ol>
     <div class="carousel-inner">
 		<?php
 			$activetor=0;
@@ -25,10 +10,24 @@
             ));
             while($myPost->have_posts()){
                 $myPost->the_post();
-				$activetor++;
-		?>
+                $activetor++;
+                // Thumbnail Url
+                $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                // ImgMagick
+                    if($thumb_url == ''){
+                        $thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
+                    }
+                    $post_index_img = thumbResizeIM($thumb_url, 770, 370, get_the_ID());
+                    if ($post_index_img != '') {
+                        $img_html = '<img class="w-100 img_size rounded-top"  src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                    } else { // if (!is_page_template( 'page-homepage.php' )) {
+                        $img_html = '<img class="w-100 img_size rounded-top"  src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                        // $cta_has_thumb = ' cta_no_thumb';
+                    }
+        ?>
+        
         <div class="carousel-item <?php echo ($activetor == 1) ? 'active':''; ?>">
-            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="d-block" alt="...">
+        <?php echo $img_html; ?>
         </div>    
 			
         <?php } ?> 	
