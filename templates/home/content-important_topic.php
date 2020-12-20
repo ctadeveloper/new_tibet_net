@@ -17,13 +17,11 @@
                     ));
                     while ($sidebar_topic->have_posts()) : $sidebar_topic->the_post();
                         // Thumbnail Url
-
-                        // $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                        $thumb_url = the_field('topic_image');
+                        $thumb_url = get_field('topic_image');
+                        // $thumb_url = wp_get_attachment_image_src(get_field('topic_image'),'topic-img');
+                        // echo $thumb_url;
                         // echo $thumb_url;
                         // ImgMagick
-                        // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
-                        // $cta_has_thumb = '';
                         $post_index_img = thumbResizeIM($thumb_url,140, 80,get_the_ID());
                         $default_thumb = default_thumb(140,80);
                         if ($post_index_img != '') {
@@ -33,11 +31,9 @@
                         }
                     ?>
                         <div class="mx-3">
-                            <a href="<?php echo the_field('topic_link'); ?>">
+                            <a href="<?php echo the_field('topic_link'); ?>" target="_blank">
                                     <?php echo $img_html ?>
                                 <?php
-                                    // echo the_field('topic_image');
-                                    
                                 ?>
                             </a>
                         </div>
