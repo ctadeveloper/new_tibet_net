@@ -1,4 +1,6 @@
 <div class="container">
+<h5 class="text-dark pt-2">Welcome to Tibet.net</h5>
+
     <!-- <?php if(wp_is_mobile()):?>
         <div class="bg-light">This is mobile version</div>
     <?php else:?>
@@ -28,7 +30,7 @@
                                 }
                                 $post_index_img = thumbResizeIM($thumb_url, 770, 370, get_the_ID());
                                 if ($post_index_img != '') {
-                                    $img_html = '<img class="w-100 img_size lazyload blur-up"  src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
+                                    $img_html = '<img class="w-100 img_size lazyload blur-up"   src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                                 } else { // if (!is_page_template( 'page-homepage.php' )) {
                                     $img_html = '<img class="w-100 img_size lazyload blur-up"  src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
                                     // $cta_has_thumb = ' cta_no_thumb';

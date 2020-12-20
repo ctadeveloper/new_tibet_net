@@ -12,6 +12,13 @@ img:hover {
 	height: 100% !important;
 	width:100% !important;
 }
+// lazyloading
+.lazyloading {
+	opacity: 1;
+	transition: 600ms opacity;
+	background: #f7f7f7 url('https://afarkas.github.io/lazysizes/assets/imgs/loader.gif') no-repeat center;
+	min-height: 60px;
+}
 // $hover:#ff8000; // hover color of the website;
 $hover: #ff8000; // hover color of the website;
 
