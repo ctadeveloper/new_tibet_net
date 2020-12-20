@@ -7,6 +7,7 @@
                 $flash_news_loop = new WP_Query(array(
                     'category_name' => 'featured-flash-news',
                     'posts_per_page' => 4,
+                    // 'posts_per_page' => 1,
                     'orderby' => 'date', 'order' => 'DESC',
                     'paged' => $paged
                 ));
@@ -46,7 +47,7 @@
             </div>
         </div>
         <!-- Featured SideNews -->
-        <div class="col-md-4 col-sm-12 my-2">
+        <div class="col-md-4 col-sm-12 mt-3">
             <?php include(TEMPLATEPATH . '/templates/home/content-featured_sidebar_news.php'); ?>
         </div>
     </div>

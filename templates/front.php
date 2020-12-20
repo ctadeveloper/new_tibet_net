@@ -15,7 +15,7 @@ get_header(); ?>
     <?php
     get_template_part('/templates/home/content', 'carousel');
     /* Featured News */
-    get_template_part('/templates/home/content', 'featured_news');
+    // get_template_part('/templates/home/content', 'featured_news');
 
     /* TibetToday */
     get_template_part('/templates/home/content', 'tibet_today');
