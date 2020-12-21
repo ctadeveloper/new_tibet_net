@@ -55,7 +55,8 @@ if(is_category()){
 									'paged' => $paged,
 									'tax_query' =>array(
 										array(
-											'taxonomy' => 'cta_content_type',
+											// 'taxonomy' => 'cta_content_type',
+											'taxonomy' => $tax->taxonomy,
 											'field' => 'slug',
 											'terms' => $tax->slug,
 										)
