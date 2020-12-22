@@ -4,9 +4,6 @@
             <div class="col-12">
                 <h5 class="text-dark font-weight-bold border-left pl-2 border-danger">IMPORTANT TOPICS</h6>
             </div>
-            <div class="col-12 py-3">
-                <div class="importantTopciSlider">
-
                     <?php
                     $sidebar_topic = new WP_Query(array(
                         'post_type' => 'cta-sb-topics',
@@ -30,7 +27,7 @@
                             $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $default_thumb. '" alt="' . get_the_title() . '">' . "\r\n";
                         }
                     ?>
-                        <div class="mx-3">
+                        <div class="col-sm-3 col-6 col-md-2 py-1">
                             <a href="<?php echo the_field('topic_link'); ?>" target="_blank">
                                     <?php echo $img_html ?>
                                 <?php
@@ -40,8 +37,6 @@
                     <?php endwhile;
                     wp_reset_postdata();
                     ?>
-                </div>
-            </div>
         </div>
     </div>
 </section>
