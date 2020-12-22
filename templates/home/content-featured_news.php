@@ -47,7 +47,7 @@
             </div>
         </div>
         <!-- Featured SideNews -->
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-sm-12" id="hFeaturedNews__sideNews">
             <?php include(TEMPLATEPATH . '/templates/home/content-featured_sidebar_news.php'); ?>
         </div>
     </div>

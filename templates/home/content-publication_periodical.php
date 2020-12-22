@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 py-3">
-                    <h6 class="text-white border-left pl-2 border-primary">PUBLICATIONS & PERIODICALS</h6>
+                <h5 class="border-left text-white font-weight-bolder pl-2 mb-3 border-primary">PUBLICATIONS & PERIODICALS</h5>
                 </div>
                 <div class="col-12">
                     <div class="row py-3">

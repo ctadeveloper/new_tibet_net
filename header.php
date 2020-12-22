@@ -21,12 +21,9 @@ $container = get_theme_mod('understrap_container_type');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <!-- <link rel="stylesheet" href="/css/fontawesome.min.css"> -->
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <!-- <script src="<?php get_template_directory_uri()?>/js/jquery.min.js"></script> -->
     <?php wp_head(); ?>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
@@ -93,5 +90,7 @@ $container = get_theme_mod('understrap_container_type');
                 <?php endif; ?>
             </nav><!-- .site-navigation -->
             <!-- Modal -->
-        </div><!-- #wrapper-navbar end -->
+        </div>
+    </div>
+        <!-- #wrapper-navbar end -->
         

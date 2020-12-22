@@ -119,20 +119,20 @@ add_action('wp_enqueue_scripts', 'adobePDF_script');
  * Slick Script
  * Register 
  *  */
-function slick_scripts(){
-    $the_theme     = wp_get_theme();
-    $theme_version = $the_theme->get('Version');
-    // js
-    $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/slick/slick.min.js');
-    wp_enqueue_script('slicki', get_template_directory_uri() . '/js/slick/slick.min.js', array(), $js_version, true);
-    // Slick css
-    $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/slick/slick.css');
-    wp_enqueue_style('slick-css', get_template_directory_uri() . '/js/slick/slick.css', array(), $css_version);
-    $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/slick/slick-theme.css');
-    wp_enqueue_style('slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css', array(), $css_version);
+// function slick_scripts(){
+//     $the_theme     = wp_get_theme();
+//     $theme_version = $the_theme->get('Version');
+//     // js
+//     $js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/slick/slick.min.js');
+//     wp_enqueue_script('slicki', get_template_directory_uri() . '/js/slick/slick.min.js', array(), $js_version, true);
+//     // Slick css
+//     $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/slick/slick.css');
+//     wp_enqueue_style('slick-css', get_template_directory_uri() . '/js/slick/slick.css', array(), $css_version);
+//     $css_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/slick/slick-theme.css');
+//     wp_enqueue_style('slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css', array(), $css_version);
 
-}
-add_action('wp_enqueue_scripts', 'slick_scripts');
+// }
+// add_action('wp_enqueue_scripts', 'slick_scripts');
 
 
 // Social Share Kit

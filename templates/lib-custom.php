@@ -1,5 +1,4 @@
 <?php
-
 // Experpt Length
 function get_print_excerpt($length)
 { // Max excerpt length. Length is set in characters
@@ -123,5 +122,3 @@ function excerpt_general_length($text,$length){
     }
 }
 ?>
-
-

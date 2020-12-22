@@ -20,12 +20,12 @@
             $img_html = '<img height="60px" class="rounded w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" height="140" width="280" alt="' . get_the_title() . '"' . "\r\n";
         }
     ?>
-        <div class="col-md-2 pr-0 col-3">
+        <div class="col-md-2 pr-0 col-2 py-1">
             <a href="<?php echo get_permalink(); ?>">
                 <?php echo $img_html; ?>
             </a>
         </div>
-        <div class="col-md-10 col-9">
+        <div class="col-md-10 col-10">
             <a href="<?php echo get_permalink(); ?>">
                 <h6 class="font-weight-bolder"><?php echo excerpt_title_length(50) ?></h6>
             </a>

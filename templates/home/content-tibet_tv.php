@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
-                <h6 class="text-dark font-weight-bolder border-left pl-2 border-danger">TIBET TV</h6>
+                <h5 class="text-dark border-left font-weight-bolder pl-2 mb-3 border-primary">TIBET TV</h5>
             </div>
             <div class="col-12">
 
@@ -25,7 +25,6 @@
                         if( $video->snippet->thumbnails !== null){
                             $date = date_format(date_create($video->snippet->publishedAt), "F j, Y");
                             // Create Elements
-                            // echo "<a class='rsImg' data-rsvideo=" . $video_id . " href=" . $video->snippet->thumbnails->standard->url . ">";
                             echo "<a class='rsImg' data-rsvideo='https://www.youtube.com/watch?v=". $video->snippet->resourceId->videoId."' alt=".$video->snippet->title." href=". $video->snippet->thumbnails->high->url.">";
                             echo "<div class='rsTmb'>";
                             echo "<h6 class='text-white'>" . $video->snippet->title . "</h6>";

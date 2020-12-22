@@ -6,10 +6,11 @@
                 <h5 class="text-dark border-left pl-2 mb-3 border-primary">TIBET AROUND THE WORLD</h5>
                 <?php
                 $nfos = new WP_Query(array(
-                    'category_name' => 'featured-flash-news',
+                    'cat' => 29,
                     'posts_per_page' => 1,
-                    'orderby' => 'date', 'order' => 'DESC',
-                    'offset' => 2,
+                    'orderby' => 'date', 
+                    'order' => 'DESC',
+                    // 'offset' => 2,
 
                 ));
                 while ($nfos->have_posts()) : $nfos->the_post();
@@ -45,12 +46,12 @@
                 <div class="row py-3">
                     <?php
                     $flash_news_loop = new WP_Query(array(
-                        // 'category_name' => 'featured-flash-news',
                         'cat' => 29,
                         'posts_per_page' => 4,
-                        'orderby' => 'date', 'order' => 'DESC',
+                        'orderby' => 'date', 
+                        'order' => 'DESC',
                         // 'paged' => $paged,
-                        // 'offset' => 1,
+                        'offset' => 1,
 
                     ));
                     while ($flash_news_loop->have_posts()) : $flash_news_loop->the_post();

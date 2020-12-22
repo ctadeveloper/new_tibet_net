@@ -30,7 +30,7 @@ get_header(); ?>
     get_template_part('/templates/home/content', 'announcement');
 
     /*Important Topics  */
-    get_template_part('/templates/home/content', 'important_topic');
+    // get_template_part('/templates/home/content', 'important_topic');
 
     /* Tibet TV */
     get_template_part('/templates/home/content', 'tibet_tv');
@@ -40,6 +40,8 @@ get_header(); ?>
 
     /* Photo Gallery */
     get_template_part('/templates/home/content', 'photo_gallery');
+    /* CTA websites*/
+    get_template_part('/templates/websites', 'modal');
     ?>
 <!-- Footer -->
 <?php 

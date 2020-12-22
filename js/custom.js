@@ -15,11 +15,17 @@ $(window).on("scroll", function () {
 });
 // Adding search icon at menu
 $("#main-menu").append("<i id='home-search-icon' class='fas fa-search align-middle fa-1x text-white px-2 pt-3' style='font-size:1.5em'></i>");
+
 $("#home-search-icon").click(function(){
         $("#myModal").modal();
         console.log("this is clicked");
 })
-
+// CTA Websites Menu
+$("#menu-item-160184").click(function(){
+    $("#cta-websites-modal").modal();
+    // $("#myModal").modal();
+    // console.log("this is clicked");
+})
 // 
 /**
  * Customizing dropdown menu
@@ -125,55 +131,44 @@ jQuery(document).ready(function ($) {
 
 //  Slick Js
 //  Home Immportant Topic
- $('.importantTopciSlider').slick({
-    dots: true,
-    infinite: false,
-    speed: 300,
-    // centerMode: true,
-    // fade: true,
-    // cssEase: 'linear',
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [
-        {
-        breakpoint: 1024,
-        settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-        }
-        },
-        {
-        breakpoint: 600,
-        settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-        }
-        },
-        {
-        breakpoint: 480,
-        settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-        }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-    ]
-    });
+//  $('.importantTopciSlider').slick({
+//     dots: true,
+//     infinite: false,
+//     speed: 300,
+//     // centerMode: true,
+//     // fade: true,
+//     cssEase: 'linear',
+//     slidesToShow: 5,
+//     slidesToScroll: 1,
+//     responsive: [
+//         {
+//         breakpoint: 1024,
+//         settings: {
+//             slidesToShow: 3,
+//             slidesToScroll: 3,
+//             infinite: true,
+//             dots: true
+//         }
+//         },
+//         {
+//         breakpoint: 600,
+//         settings: {
+//             slidesToShow: 2,
+//             slidesToScroll: 2
+//         }
+//         },
+//         {
+//         breakpoint: 480,
+//         settings: {
+//             slidesToShow: 3,
+//             slidesToScroll: 1
+//         }
+//         }
+//     ]
+//     });
 // Publiction / Periodicals
     // $(document).ready(function () {
 });
-	// document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-	// 	var adobeDCView = new AdobeDC.View({clientId: "239e472f90aa4e75b88af92eef8deaf8", divId: "adobe-dc-view"});
-	// 	adobeDCView.previewFile({
-	// 		content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-	// 		metaData:{fileName: "Bodea Brochure.pdf"}
-	// 	}, {embedMode: "LIGHT_BOX"});
-	// });
-
 // Removing blur for gallery
 // if($('#gallery')){
 //     if($("rsNavItem")){

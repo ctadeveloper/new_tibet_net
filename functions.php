@@ -41,4 +41,4 @@ require_once locate_template('/templates/post-type/custom-taxonomies.php');
 require_once locate_template('/templates/post-type/post-format.php');
 // Custom Library
 // Excerpt functions and other functions
-require_once locate_template('/templates/lib-custom.php'); 
+require_once locate_template('/templates/lib-custom.php');
