@@ -17,9 +17,8 @@
                 // ImgMagick
                 // $thumb1 = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                 if($thumb_url == ''){
-                    $thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
+                    $thumb_url = get_template_directory_uri().'/img/cta_grid_default_280x140.jpg';
                 }
-                $cta_has_thumb = '';
                 $post_index_img = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                 if ($post_index_img != '') {
                     $img_html = '<img class="w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";

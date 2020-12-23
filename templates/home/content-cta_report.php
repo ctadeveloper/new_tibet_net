@@ -11,21 +11,14 @@
     while ($flash_news_loop->have_posts()) : $flash_news_loop->the_post();
         // Thumbnail URL
         $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-        if($thumb_url == ''){
-            $thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
-
-        }
-        // Title Excert
-        // $thumb1 = thumbResizeIM($thumb_url, 120, 120, get_the_ID());
         // $post_index_img = cta_thumb(120, 80);
         $post_index_img = thumbResizeIM($thumb_url, 120, 80, get_the_ID());
         if ($post_index_img != '') {
             $img_html = '<img class="w-100 rounded lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
         } else {
              // if (!is_page_template( 'page-homepage.php' )) {
-        $default_thumb = default_thumb(120,80);
-            // $img_html = '<img class="w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" height="120" width="120" alt="' . get_the_title() . '"' . "\r\n";
-            $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $default_thumb. '" alt="' . get_the_title() . '">' . "\r\n";
+        // $default_thumb = default_thumb(120,80);
+            $img_html = '<img class="w-100 lazyload blur-up"  data-src="' . get_template_directory_uri() . '/img/cta_grid_default_120x80.jpg" alt="' . get_the_title() . '"' . "\r\n";
 
         }
     ?>
@@ -45,24 +38,6 @@
                 </p>
                 <p class="text-muted m-0 p-0 d-none d-md-block"><?php echo get_print_excerpt(100).'...' ?></p>
             </div>
-        <!-- </div> -->
-<!-- 
-            <div class="col-12">
-                <div class="media my-1">
-                    <a href="<?php echo get_permalink(); ?>">
-                        <?php echo $img_html; ?>
-                    </a>
-                    <div class="media-body ml-3">
-                        <a href="<?php echo get_permalink(); ?>">
-                            <h6 class="mt-0 font-weight-bolder"><?php echo excerpt_title_length(100) ?></h6>
-                        </a>
-                        <p class="small text-muted p-0"><?php echo get_the_time("F j, Y"); ?>
-                            <?php include(TEMPLATEPATH . '/templates/social_share_api.php'); ?>
-                        </p>
-                        <p class="text-muted p-0"><?php echo get_print_excerpt(100) ?></p>
-                    </div>
-                </div>
-            </div> -->
         </div>
     <?php endwhile;
     wp_reset_postdata();

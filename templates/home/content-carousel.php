@@ -32,7 +32,7 @@
                                 if ($post_index_img != '') {
                                     $img_html = '<img class="w-100 img_size lazyload blur-up"   src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                                    $img_html = '<img class="w-100 img_size lazyload blur-up"  src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+                                    $img_html = '<img class="w-100 img_size lazyload blur-up"  src="' . get_template_directory_uri() . '/img/cta_grid_default_770x370.jpg" alt="' . get_the_title() . '"' . "\r\n";
                                     // $cta_has_thumb = ' cta_no_thumb';
                                 }
                         ?>

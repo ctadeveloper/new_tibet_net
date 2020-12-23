@@ -20,11 +20,11 @@
                         // echo $thumb_url;
                         // ImgMagick
                         $post_index_img = thumbResizeIM($thumb_url,140, 80,get_the_ID());
-                        $default_thumb = default_thumb(140,80);
+                        // $default_thumb = default_thumb(140,80);
                         if ($post_index_img != '') {
                             $img_html = '<img class="list-item-image img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                         } else { // if (!is_page_template( 'page-homepage.php' )) {
-                            $img_html = '<img class="img-responsive w-100 rounded-top" src="' . $default_thumb. '" alt="' . get_the_title() . '">' . "\r\n";
+                            $img_html = '<img class="w-100 lazyload blur-up"  data-src="' . get_template_directory_uri() . '/img/cta_grid_default_140x80.jpg" alt="' . get_the_title() . '"' . "\r\n";
                         }
                     ?>
                         <div class="col-sm-3 col-6 col-md-2 py-1">

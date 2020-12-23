@@ -41,11 +41,10 @@ get_header(); ?>
     /* Photo Gallery */
     get_template_part('/templates/home/content', 'photo_gallery');
     /* CTA websites*/
-    get_template_part('/templates/websites', 'modal');
+    // get_template_part('/templates/websites', 'modal');
     ?>
 <!-- Footer -->
 <?php 
 
 ?>
 <?php get_footer();
-get_template_part('/templates/search', 'modal');

@@ -4,7 +4,7 @@
     if ($post_index_img != '') {
         $img_html = '<img class="list-item-image img-responsive rounded w-100 lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
     } else { // if (!is_page_template( 'page-homepage.php' )) {
-        $img_html = '<img class="list-item-image img-responsive w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default.jpg" alt="' . get_the_title() . '"' . "\r\n";
+        $img_html = '<img class="list-item-image img-responsive w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default_120x80.jpg" alt="' . get_the_title() . '"' . "\r\n";
         // $cta_has_thumb = ' cta_no_thumb';
     }
     ?>

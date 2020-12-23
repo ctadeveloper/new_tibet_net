@@ -13,11 +13,10 @@
         // echo $default;
         // ImgMagick
         $post_index_img = thumbResizeIM($thumb_url, 60, 60, get_the_ID());
-
         if ($post_index_img != '') {
             $img_html = '<img height="60px" class="rounded w-100  lazyload blur-up" data-src="' . $post_index_img . '" alt="' . excerpt_title_length(5) . '">' . "\r\n";
         } else { // if (!is_page_template( 'page-homepage.php' )) {
-            $img_html = '<img height="60px" class="rounded w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default-280x140.jpg" height="140" width="280" alt="' . get_the_title() . '"' . "\r\n";
+            $img_html = '<img height="60px" class="rounded w-100 lazyload blur-up" data-src="' . get_template_directory_uri() . '/img/cta_grid_default_120x80.jpg" height="140" width="280" alt="' . get_the_title() . '"' . "\r\n";
         }
     ?>
         <div class="col-md-2 pr-0 col-2 py-1">

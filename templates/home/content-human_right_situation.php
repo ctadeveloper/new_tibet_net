@@ -15,17 +15,15 @@
             while ($human_right->have_posts()) : $human_right->the_post();
                 // Thumbnail Url
                 $thumb_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                if($thumb_url == ''){
-                    $thumb_url = get_template_directory_uri().'/img/cta_grid_default.jpg';
-                }
                 // ImgMagick
                 $post_index_img = thumbResizeIM($thumb_url, 280, 140, get_the_ID());
                 // $cta_has_thumb = '';
                 if ($post_index_img != '') {
                     $img_html = '<img class="rounded img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
                 } else { // if (!is_page_template( 'page-homepage.php' )) {
-                    $img_html = '<img class="rounded img-responsive w-100 rounded-top lazyload blur-up" data-src="' . $post_index_img . '" alt="' . get_the_title() . '">' . "\r\n";
-                    // $cta_has_thumb = ' cta_no_thumb';
+                    $img_html = '<img class="w-100 lazyload blur-up"  data-src="' . get_template_directory_uri() . '/img/cta_grid_default_280x140.jpg" alt="' . get_the_title() . '"' . "\r\n";
+
+
                 }
             ?>
                 <div class="col-md-3 col-sm-6 col-6 py-3">
