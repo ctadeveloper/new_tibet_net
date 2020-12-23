@@ -111,8 +111,11 @@ $container = get_theme_mod('understrap_container_type');
 
     </div><!-- #page we need this extra closing tag here -->
 </footer>
-
 <?php wp_footer(); ?>
+<!-- Modal for the CTA Websites -->
+<?php get_template_part('/templates/websites', 'modal');?>
+<!-- Search -->
+<?php get_template_part('/templates/search', 'modal');?>
 </body>
 
 </html>
