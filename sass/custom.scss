@@ -8,7 +8,7 @@
 // Blue CSS
 #cta-official-color-blue{
 //  Navigation color for BLUE theme
-	#nav_bar{
+	#nav_bar {
 	.header_logo {
 		background-color: #4773a3;
 		color: #fff;
@@ -34,50 +34,11 @@
 			}
 		}
 	}
-	// Footer
-	#cta_footer{
-		// background-color:red !important;
-		// Footer Information
-		a {
-			color: #ffffff !important;
-			font-family: "knowledge-light";
-		}
-		a:hover {
-			color: $hover;
-			transition: 0.2s;
-		}
-		.footer_list {
-			padding-left: 1px;
-			list-style: none;
-		}
-		.footer_sign_up {
-			padding-left: 1px;
-			list-style: none;
-	
-			li {
-				display: inline !important;
-				padding: 0px 3px;
-				font-size: 1.3em;
-			}
-		}
-		#footer_info {
-			background-color: #0f4877;
-			color: #fff !important;
-		}
-		// Footer CopyRight
-		#footer_copy_right {
-			background: #0f3a54;
-			color: #fff;
-	
-			a {
-				color: #fff !important;
-			}
-		}
-	}
 }
 // CTA Official color
 // Green
 #cta-official-color-green{
+	
 	#nav_bar{
 		.header_logo {
 			background-color: #146e59;
@@ -105,29 +66,9 @@
 			}
 		}
 	}
-	footer{
-		background: red !important;
-	}
-	// #cta_footer{
-	// 	li{
-	// 		list-style: none !important;
-	// 	}
-	// 	// Footer Information
-	// 	#footer_info {
-	// 		background-color: #146e59;
-	// 		color: #fff !important;
-	// 	}
-	// 	// Footer CopyRight
-	// 	#footer_copy_right {
-	// 		background-color: #0d493b;
-	// 		color: #fff;
-	
-	// 		a {
-	// 			color: #fff !important;
-	// 		}
-	// 	}
-	// }
 }
+
+
 img:hover {
 	opacity: 0.7;
 	transition: .5s;
@@ -609,6 +550,66 @@ body {
  *
  */
 //
+footer{
+	// Footer Information
+	a {
+		color: #ffffff !important;
+		font-family: "knowledge-light";
+	}
+
+	a:hover {
+		color: $hover;
+		transition: 0.2s;
+	}
+
+	.footer_list {
+		padding-left: 1px;
+		list-style: none;
+	}
+
+	.footer_sign_up {
+		padding-left: 1px;
+		list-style: none;
+
+		li {
+			display: inline !important;
+			padding: 0px 3px;
+			font-size: 1.3em;
+		}
+	}
+}
+#cta_footer_blue {
+	#footer_info {
+		background-color: #0f4877;
+		color: #fff !important;
+	}
+	// Footer CopyRight
+	#footer_copy_right {
+		background: #0f3a54;
+		color: #fff;
+
+		a {
+			color: #fff !important;
+		}
+	}
+}
+
+#cta_footer_green {
+	// Footer Information
+	#footer_info {
+		background-color: #146e59;
+		color: #fff !important;
+	}
+	// Footer CopyRight
+	#footer_copy_right {
+		background-color: #0d493b;
+		color: #fff;
+
+		a {
+			color: #fff !important;
+		}
+	}
+}
 
 // LazyLoading css / Blur
 .lazyload {

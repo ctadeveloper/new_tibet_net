@@ -14,7 +14,7 @@ defined('ABSPATH') || exit;
 
 $container = get_theme_mod('understrap_container_type');
 ?>
-    <footer id="cta_footer">
+    <footer id="cta_footer_blue">
         <!-- Info -->
         <div id="footer_info" class="d-none d-sm-block">
             <div class="container">
@@ -112,7 +112,6 @@ $container = get_theme_mod('understrap_container_type');
 <?php get_template_part('/templates/websites', 'modal');?>
 <!-- Search -->
 <?php get_template_part('/templates/search', 'modal');?>
-
 </body>
 
 </html>
