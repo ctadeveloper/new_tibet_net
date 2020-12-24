@@ -28,9 +28,9 @@ $container = get_theme_mod('understrap_container_type');
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
     <?php do_action('wp_body_open'); ?>
-    <div id="cta-official-site">
+    <div id="cta-official-color-green">
         <!-- ******************* The Navbar Area ******************* -->
-        <div id="nav_bar_blue">
+        <div id="nav_bar">
             <!-- <div id="nav_bar_green"> -->
             <div class="header_logo">
                 <!-- Header -->
@@ -91,6 +91,5 @@ $container = get_theme_mod('understrap_container_type');
             </nav><!-- .site-navigation -->
             <!-- Modal -->
         </div>
-    </div>
         <!-- #wrapper-navbar end -->
         

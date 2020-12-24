@@ -14,14 +14,11 @@ defined('ABSPATH') || exit;
 
 $container = get_theme_mod('understrap_container_type');
 ?>
-<footer>
-    <div id="cta_footer_blue">
-        <!-- <div class="wrapper" id="cta_footer_green"> -->
+    <footer id="cta_footer">
         <!-- Info -->
         <div id="footer_info" class="d-none d-sm-block">
             <div class="container">
                 <img src="<?php echo get_template_directory_uri() . '/img/cta-divider.png' ?>" class="img-fluid pt-3" alt="">
-
                 <div class="row py-2">
                     <div class="col-md-3 col-sm-6">
                         <h5 class="footer_header">About Tibet</h5>
@@ -108,14 +105,14 @@ $container = get_theme_mod('understrap_container_type');
                 </div><!-- row end -->
             </div>
         </div><!-- wrapper end -->
-
-    </div><!-- #page we need this extra closing tag here -->
-</footer>
+    </footer>
+</div>
 <?php wp_footer(); ?>
 <!-- Modal for the CTA Websites -->
 <?php get_template_part('/templates/websites', 'modal');?>
 <!-- Search -->
 <?php get_template_part('/templates/search', 'modal');?>
+
 </body>
 
 </html>
