@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
+            <a href="/category/announcements/">
                 <h5 class="text-dark font-weight-bolder border-left pl-2 border-danger">ANNOUNCEMENTS</h6>
+                </a>
             </div>
             <?php
             $human_right = new WP_Query(array(

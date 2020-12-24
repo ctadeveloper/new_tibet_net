@@ -3,7 +3,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+                <a href="/category/news-from-other-sites/">
                 <h5 class="text-dark border-left pl-2 mb-3 border-primary">TIBET AROUND THE WORLD</h5>
+                </a>
                 <?php
                 $nfos = new WP_Query(array(
                     'cat' => 29,
@@ -91,7 +93,9 @@
             </div>
             <!-- CTA Report -->
             <div class="col-md-6">
-                <h5 class="text-dark font-weight-bolder border-left pl-2" style="border-left: solid 3px #28a745 !important;">CTA REPORTS</h5>
+            <a href="/category/cta-offices-report/">
+            <h5 class="text-dark font-weight-bolder border-left pl-2" style="border-left: solid 3px #28a745 !important;">CTA REPORTS</h5>
+            </a>
                 <?php include(TEMPLATEPATH . '/templates/home/content-cta_report.php'); ?>
             </div>
         </div>

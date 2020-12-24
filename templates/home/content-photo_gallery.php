@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
+            <a href="/posts/photos/">
                 <h5 class="text-dark font-weight-bolder border-left pl-2 border-primary">IN PICTURES</h6>
+            </a>
             </div>
             <?php
             $galleries = new WP_Query(array(

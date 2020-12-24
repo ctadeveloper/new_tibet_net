@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
+            <a href="/category/flash-news/">
                 <h5 class="text-dark font-weight-bold border-left pl-2 border-danger">TIBET TODAY</h5>
+                </a>
             </div>
             <?php
             $tibet_today = new WP_Query(array(

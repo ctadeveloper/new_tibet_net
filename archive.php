@@ -36,8 +36,12 @@ if(is_category()){
 	<div class="container pt-2">
 		<div class="row">
 			<div class="col-12 text-white-50 font-weight-bold small">
-				TIBET TODAY | TIBET AROUND THE WORLD | CTA REPORTS | HUMAN RIGHTS & SITUATION INSIDE TIBET
-				| IMPORTANT TOPICS | ANNOUNCEMENT | TIBET TV
+			<a href="/category/flash-news/" class="text-white-50">TIBET TODAY</a> | 
+			<a href="category/news-from-other-sites/" class="text-white-50 ">TIBET AROUND THE WORLD</a> |  
+			<a href="/category/cta-offices-report/" class="text-white-50">CTA REPORTS</a> | 
+			<a href="/category/situation-in-tibet/" class="text-white-50">HUMAN RIGHTS & SITUATION INSIDE TIBET</a> |  
+			<a href="/posts/announcements/" class="text-white-50">ANNOUNCEMENT</a> | 
+			<a href="https://tibetonline.tv" class="text-white-50">TIBET TV</a>
 			</div>
 		</div>
 	</div>

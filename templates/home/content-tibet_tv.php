@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-12">
-                <h5 class="text-dark border-left font-weight-bolder pl-2 mb-3 border-primary">TIBET TV</h5>
+            <a href="https://tibetonline.tv">
+            <h5 class="text-dark border-left font-weight-bolder pl-2 mb-3 border-primary">TIBET TV</h5>
+            </a>
             </div>
             <div class="col-12">
 
