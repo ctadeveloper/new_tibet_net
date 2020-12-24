@@ -14,7 +14,7 @@ defined('ABSPATH') || exit;
 
 $container = get_theme_mod('understrap_container_type');
 ?>
-    <footer id="cta_footer_blue">
+    <footer id="cta_footer_green">
         <!-- Info -->
         <div id="footer_info" class="d-none d-sm-block">
             <div class="container">
