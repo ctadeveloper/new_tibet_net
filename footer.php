@@ -38,39 +38,39 @@ $container = get_theme_mod('understrap_container_type');
                     <div class="col-md-3 col-sm-6">
                         <h5 class="footer_header">About CTA</h5>
                         <ul class="footer_list">
-                            <li><a href="http://new.tibet.net:8888//about-cta/constitution/" target="_self">Constitution</a></li>
-                            <li><a href="http://new.tibet.net:8888//about-cta/leadership/" target="_self">Leadership</a></li>
-                            <li><a href="http://new.tibet.net:8888//about-cta/judiciary/" target="_self">Judiciary</a></li>
-                            <li><a href="http://new.tibet.net:8888/about-cta/legislature/" target="_self">Legislature</a></li>
-                            <li><a href="http://new.tibet.net:8888/about-cta/executive/" target="_self">Executive</a></li>
-                            <li><a href="http://new.tibet.net:8888//about-cta/election-commission/" target="_self">Election Commission</a></li>
-                            <li><a href="http://new.tibet.net:8888/about-cta/public-service-commission/" target="_self">Public Service Commission</a></li>
-                            <li><a href="http://new.tibet.net:8888/about-cta/office-of-the-auditor-general/" target="_self">Auditor General</a></li>
+                            <li><a href="/about-cta/constitution/" target="_self">Constitution</a></li>
+                            <li><a href="/about-cta/leadership/" target="_self">Leadership</a></li>
+                            <li><a href="/about-cta/judiciary/" target="_self">Judiciary</a></li>
+                            <li><a href="/about-cta/legislature/" target="_self">Legislature</a></li>
+                            <li><a href="/about-cta/executive/" target="_self">Executive</a></li>
+                            <li><a href="/about-cta/election-commission/" target="_self">Election Commission</a></li>
+                            <li><a href="/about-cta/public-service-commission/" target="_self">Public Service Commission</a></li>
+                            <li><a href="/about-cta/office-of-the-auditor-general/" target="_self">Auditor General</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <h5 class="footer_header">Departments</h5>
                         <ul class="footer_list">
-                            <li><a href="http://new.tibet.net:8888/religion/" target="_self">Religion &amp; Culture</a></li>
-                            <li><a href="http://new.tibet.net:8888/home/" target="_self">Home</a></li>
-                            <li><a href="http://new.tibet.net:8888/finance/" target="_self">Finance</a></li>
-                            <li><a href="http://new.tibet.net:8888/education/" target="_self">Education</a></li>
-                            <li><a href="http://new.tibet.net:8888/security/" target="_self">Security</a></li>
-                            <li><a href="http://new.tibet.net:8888/information/" target="_self">Information &amp; International Relations</a></li>
-                            <li><a href="http://new.tibet.net:8888/health/" target="_self">Health</a></li>
+                            <li><a href="/religion/" target="_self">Religion &amp; Culture</a></li>
+                            <li><a href="/home/" target="_self">Home</a></li>
+                            <li><a href="/finance/" target="_self">Finance</a></li>
+                            <li><a href="/education/" target="_self">Education</a></li>
+                            <li><a href="/security/" target="_self">Security</a></li>
+                            <li><a href="/information/" target="_self">Information &amp; International Relations</a></li>
+                            <li><a href="/health/" target="_self">Health</a></li>
                         </ul>
                     </div>
                     <!-- <div class="col-md-3">
                         <h5 class="footer_header">Media Center</h5>
                         <ul class="footer_list">
-                            <li><a href="http://new.tibet.net:8888/posts/announcements/" target="_self">Announcements</a></li>
-                            <li><a href="http://new.tibet.net:8888/category/media-center/press-release/" target="_self">Press Releases</a></li>
-                            <li><a href="http://new.tibet.net:8888/posts/periodicals/" target="_self">Periodicals</a></li>
-                            <li><a href="http://new.tibet.net:8888/posts/publications/" target="_self">Publications</a></li>
-                            <li><a href="http://new.tibet.net:8888/category/flash-news/" target="_self">News Archive</a></li>
-                            <li><a href="http://new.tibet.net:8888/posts/videos/" target="_self">Tibet TV Videos</a></li>
-                            <li><a href="http://new.tibet.net:8888/posts/photos/" target="_self">Photo Galleries</a></li>
-                            <li><a href="http://new.tibet.net:8888/archive/" target="_self">Tibet.net Archive</a></li>
+                            <li><a href="/posts/announcements/" target="_self">Announcements</a></li>
+                            <li><a href="/category/media-center/press-release/" target="_self">Press Releases</a></li>
+                            <li><a href="/posts/periodicals/" target="_self">Periodicals</a></li>
+                            <li><a href="/posts/publications/" target="_self">Publications</a></li>
+                            <li><a href="/category/flash-news/" target="_self">News Archive</a></li>
+                            <li><a href="/posts/videos/" target="_self">Tibet TV Videos</a></li>
+                            <li><a href="/posts/photos/" target="_self">Photo Galleries</a></li>
+                            <li><a href="/archive/" target="_self">Tibet.net Archive</a></li>
                         </ul>
                     </div> -->
                     <div class="col-md-3 col-sm-6">
@@ -79,10 +79,10 @@ $container = get_theme_mod('understrap_container_type');
                         <input type="text" class="form-control">
                         <button class="btn btn-sm btn-danger mt-3">Subscribe</button>
                         <ul class="footer_sign_up py-3">
-                            <li><a href="http://new.tibet.net:8888/religion/" target="_self"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="http://new.tibet.net:8888/religion/" target="_self"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="http://new.tibet.net:8888/religion/" target="_self"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a href="http://new.tibet.net:8888/religion/" target="_self"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="/religion/" target="_self"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="/religion/" target="_self"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="/religion/" target="_self"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="/religion/" target="_self"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
